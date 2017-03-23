@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+.carga{
+    padding-top: 200px;
+}
+.clear{
+    height: 5px;
+    width: 100%;
+    clear: both;
+}
