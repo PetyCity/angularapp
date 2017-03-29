@@ -8,11 +8,13 @@ import { PostListComponent } from './post/post-list.component';
 import { PostService } from './post/post.service';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ContactComponent } from './contact/contact.component';
 @NgModule({
   declarations: [
     AppComponent,
     PostListComponent,
-    HomepageComponent
+    HomepageComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

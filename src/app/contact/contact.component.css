@@ -1,0 +1,21 @@
+.barra-titulo {
+    width: 100%;
+    height: 65px;
+    padding: 11px 35px;
+    margin: 20px 0px;
+    border-radius: 10px;
+    font-size: 26px;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.cont-contact {
+    width: 100%;
+    background: #F0FFF0;
+
+}
+
+.contact-section{
+    width: 50%;
+    float: left;
+}
