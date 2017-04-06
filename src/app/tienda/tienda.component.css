@@ -9,6 +9,28 @@
     text-transform: uppercase;
     font-family: cursive;
 }
+.contenedor-producto{
+    text-align: center;
+}
+
+.ver-producto{
+    text-align: center;
+}
+.product-letra{
+    height: 37px;
+    font-size: 26px;
+    color: #000;
+    text-transform: uppercase;
+    font-family: cursive;
+}
+
+.product-valor{
+    height: 37px;
+    font-size: 26px;
+    color: #3FD2BF;
+    margin-bottom: 35px;
+    border-radius: 7px;
+}
 
 .breadcrumbs {
     width: 100%;
@@ -27,6 +49,8 @@
     border-radius: 7px;
 }
 
+
+
 .titulos-productos {
     width: 100%;
     font-weight:bold;
@@ -40,11 +64,19 @@
     font-size: initial;
 }
 
-.productos {
-    margin-top: -15%;
+.detalles-producto{
+     height: 30px;
 }
 .productos-destacados{
     padding-left: 10%;
+}
+
+.pagination{
+    padding-top: 5%;
+}
+
+.images-producto img{
+    width: 80%
 }
 
 
