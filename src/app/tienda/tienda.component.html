@@ -1,0 +1,62 @@
+
+               
+
+
+
+<div class="barra-titulo">
+	TIENDA
+</div>
+
+<div class="breadcrumbs">
+	Home/tienda
+</div>
+
+
+
+<div class="container" >
+
+	<div class="row" >
+		<div class="tienda-productos col-9" >
+			<u>Tienda de Productos</u>
+		</div>
+		<div class=" col-3" >
+			<span class="titulos-productos">Categoria de Productos</span>
+			<div class="opciones-productos">
+				<a href="">Accesorios para Mascotas</a> <br>
+				<a href="">Comida para mascotas</a> <br>
+				<a href="">Productos de salud</a> <br>
+				<a href="">Productos de Belleza</a> <br>
+				<a href="">Habitat para Mascotas</a> <br>
+			</div>
+
+			<span class="titulos-productos">Productos Destacados</span>
+
+			<div class="opciones-productos">
+				<div  *ngFor="let product of products; let i = index">
+				<div *ngIf="i < 3">
+					{{product.name_product}}
+				</div>
+			</div>
+				
+			</div>
+
+		</div>
+		<div class="productos col-9" >
+			<div class="row" >
+				<div class="col-4 " *ngFor="let product of products | paginate: { itemsPerPage: 9, currentPage: p }">
+					{{product.name_product}}
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+	
+
+	
+
+</div>
+
+<div><pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls></div>
+
+
