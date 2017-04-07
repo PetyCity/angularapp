@@ -77,3 +77,6 @@ a.link-añadir {
 .prod-recientes .btn-añadir {
     background: #000;
 }
+.navegacion-mascotas li.nav-item.active a.nav-link {
+    background-color: #292b2c;
+}

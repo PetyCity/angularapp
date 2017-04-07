@@ -13,7 +13,7 @@ const routes: Routes = [
     { path: 'home', component: HomepageComponent },
     { path: 'posts', component: PostListComponent},
     { path: 'contact', component: ContactComponent },
-    { path: 'products', component: TiendaComponent }
+    { path: 'products', component: TiendaComponent },
     { path: 'product', component: ProductComponent },
 ]
 

@@ -20,8 +20,7 @@ import { ProductComponent } from './product/product.component';
     PostListComponent,
     HomepageComponent,
     ContactComponent,
-    ProductComponent
-    ContactComponent,
+    ProductComponent,
     TiendaComponent
   ],
   imports: [
