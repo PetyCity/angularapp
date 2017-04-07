@@ -6,12 +6,12 @@ import { Product } from './tienda';
 
 @Injectable()
 export class TiendaService {
-	private productUrl = 'http://localhost:3000/products';
+	private productUrl = 'http://localhost:3000/api/v1/products';
 
 	constructor(private http: Http) {}
 
 	getProducts(): Observable<Product[]> {
-		return this.http.get(this.productUrl).map((response: Response) => <Product[]>response.json())
+		return this.http.get(this.productUrl).map((response: Response) => <Product[]>response.json().products)
 	}
 
 	getProduct(id: number){

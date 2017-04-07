@@ -1,8 +1,9 @@
+<div *ngIf="product">
 <div class="barra-titulo">
-  Producto X
+  Producto {{product.product.name_product}}
 </div>
 <div class="breadcrumbs">
-  Home/Productos/productoX
+  Home/Productos/{{product.product.name_product}}
 </div>
 
 <div class="cont-product col-md-12">
@@ -13,9 +14,9 @@
       </div> 
       <div class="datos-prod col-md-6">
         <div class="txt-producto">
-            <span class="precio-home"> $95.000 </span>
-            <br>
-            <p> LOREM IPSUM LOREM IPSUM Lorem IPSUM </p>
+            <span class="precio-home"> ${{product.product.value}} </span>
+            <div style="width:100%; height: 10px;"></div>
+            <p> {{product.product.description}}</p>
           </div>
           <div class="clear"> </div>
       </div> 
@@ -86,4 +87,5 @@
      productos recientes
   </div>
   <div class="clear"></div>
+</div>
 </div>
