@@ -27,15 +27,15 @@
 								
 							</div>
 							<div class="row detalles-producto">
-								<div class="col-6 product-letra">
+								<div class="col-8 product-letra">
 									{{product.name_product}}
 								</div>
 								<div class="col-4 product-valor">
-									{{product.value}}
+									$ {{product.value}}
 								</div>
 							</div>
 							<div class="row ver-producto">
-								<a class="link-añadir" href="#">
+								<a class="link-añadir" (click)="goToProduct(product)">
 							        <div class="btn-añadir">
 							        	Ver Producto
 							        </div>
@@ -76,7 +76,6 @@
 					
 				</div>
 
-<<<<<<< HEAD
 				<div>
 					IMAGEN
 				</div>
@@ -92,7 +91,6 @@
 
 				<div>
 					IMAGEN
-=======
 		</div>
 		<div class="productos col-9" >
 			<div class="row" >
@@ -100,7 +98,7 @@
 					<a (click)="goToProduct(product)">
 						{{product.name_product}}
 					</a>
->>>>>>> vista-producto-interno
+
 				</div>
 				<div class="row">
 					<div class="col-8">
