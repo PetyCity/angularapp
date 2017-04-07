@@ -5,7 +5,7 @@ import { PostListComponent } from './post/post-list.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ContactComponent  } from './contact/contact.component';
 import { TiendaComponent } from './tienda/tienda.component';
-import { ProductComponent  } from './product/product.component';
+import { ProductComponent } from './tienda/product.component';
 
 
 const routes: Routes = [
@@ -14,7 +14,8 @@ const routes: Routes = [
     { path: 'posts', component: PostListComponent},
     { path: 'contact', component: ContactComponent },
     { path: 'products', component: TiendaComponent },
-    { path: 'product', component: ProductComponent },
+    { path: 'products/:id', component: ProductComponent },
+    
 ]
 
 @NgModule({

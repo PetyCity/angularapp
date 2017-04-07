@@ -44,7 +44,9 @@
 		<div class="productos col-9" >
 			<div class="row" >
 				<div class="col-4 " *ngFor="let product of products | paginate: { itemsPerPage: 9, currentPage: p }">
-					{{product.name_product}}
+					<a (click)="goToProduct(product)">
+						{{product.name_product}}
+					</a>
 				</div>
 			</div>
 		</div>

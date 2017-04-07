@@ -12,8 +12,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { ContactComponent } from './contact/contact.component';
 import { TiendaComponent } from './tienda/tienda.component';
 import { TiendaService } from './tienda/tienda.service';
+import { ProductComponent } from './tienda/product.component';
 
-import { ProductComponent } from './product/product.component';
 @NgModule({
   declarations: [
     AppComponent,
