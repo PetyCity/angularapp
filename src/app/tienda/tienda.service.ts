@@ -13,4 +13,8 @@ export class TiendaService {
 	getProducts(): Observable<Product[]> {
 		return this.http.get(this.productUrl).map((response: Response) => <Product[]>response.json())
 	}
+
+	getProduct(id: number){
+		return this.http.get(this.productUrl + "/" + id + '.json');
+	}
 }

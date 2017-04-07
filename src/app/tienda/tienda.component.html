@@ -76,6 +76,7 @@
 					
 				</div>
 
+<<<<<<< HEAD
 				<div>
 					IMAGEN
 				</div>
@@ -91,6 +92,15 @@
 
 				<div>
 					IMAGEN
+=======
+		</div>
+		<div class="productos col-9" >
+			<div class="row" >
+				<div class="col-4 " *ngFor="let product of products | paginate: { itemsPerPage: 9, currentPage: p }">
+					<a (click)="goToProduct(product)">
+						{{product.name_product}}
+					</a>
+>>>>>>> vista-producto-interno
 				</div>
 				<div class="row">
 					<div class="col-8">
