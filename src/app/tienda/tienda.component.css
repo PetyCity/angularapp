@@ -24,13 +24,14 @@
     margin-top: 5px;
     max-width: 150px;
     overflow: hidden;
-    height: 60px;
+    padding-left: 45%;
 }
 
 .product-valor{
     font-size: 20px;
     color: #3FD2BF;
     margin-top: 5px;
+    padding-left: 45%;
 }
 
 .breadcrumbs {
@@ -50,7 +51,9 @@
     border-radius: 7px;
 }
 
-
+.producto{
+    width: 450%;
+}
 
 .titulos-productos {
     width: 100%;
@@ -66,7 +69,7 @@
 }
 
 .detalles-producto{
-     height: 30px;
+     width: 100%;
 }
 .productos-destacados{
     padding-left: 10%;

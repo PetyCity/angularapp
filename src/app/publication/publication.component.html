@@ -1,0 +1,66 @@
+<div class="barra-titulo">
+	PUBLICACIONES
+</div>
+
+<div class="breadcrumbs">
+	Home/publicaciones
+</div>
+
+<div class="container" >
+
+	<div class="row">
+		<div class="col-9">
+			<div class="row" >
+				<div class="todas-publicaciones col-9" >
+					<u>Todas las publicaciones</u>
+				</div>
+				
+			</div>
+			<div class="row">
+				<div class=" col-12" >
+					<div class="row" >
+						<!--<div class="container-prod" *ngFor="let product of products">-->
+							<div class="col-4 contenedor-producto" *ngFor="let product of products | paginate: { itemsPerPage: 9, currentPage: p }">
+								<div class="row">
+									<div class="col-12 ">
+									<img src="images/producto1.jpg" />
+									</div>
+								
+								</div>
+								<div class="row detalles-producto">
+									<div class="col-8 product-letra">
+										{{product.name_product}}
+									</div>
+									<div class="col-4 product-valor">
+										$ {{product.value}}
+									</div>
+								</div>
+								<div class="row ver-producto">
+									<a class="link-añadir" (click)="goToProduct(product)">
+							        <div class="btn-añadir">
+							        	Ver Producto
+							        </div>
+							    	</a>
+								</div>
+							</div>
+						<!--</div>-->
+					</div>
+				</div>
+			</div>
+		</div>
+			
+
+		<div class=" col-3" >
+			
+
+	
+
+		</div>
+
+		
+
+
+
+<div class="pagination"><pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls></div>
+
+

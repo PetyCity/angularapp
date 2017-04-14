@@ -14,6 +14,8 @@
 				<div class="tienda-productos col-9" >
 					<u>Tienda de Productos</u>
 				</div>
+
+				<div class="pagination"><pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls></div>
 				
 			</div>
 			<div class="row">
@@ -21,27 +23,21 @@
 					<div class="row" >
 						<!--<div class="container-prod" *ngFor="let product of products">-->
 							<div class="col-4 contenedor-producto" *ngFor="let product of products | paginate: { itemsPerPage: 9, currentPage: p }">
-								<div class="row">
-									<div class="col-12 ">
-									<img src="images/producto1.jpg" />
-									</div>
-								
-								</div>
 								<div class="row detalles-producto">
-									<div class="col-8 product-letra">
-										{{product.name_product}}
+									<div class="col-xs-6 col-md-3">
+										<a class="thumbnail producto" (click)="goToProduct(product)">
+										  <img src="/images/producto1.jpg" >
+										  	<div class="row product-letra">
+												{{product.name_product}}
+											</div>
+											<div class="row product-valor">
+												$ {{product.value}}
+											</div>
+										</a>
 									</div>
-									<div class="col-4 product-valor">
-										$ {{product.value}}
-									</div>
+									
 								</div>
-								<div class="row ver-producto">
-									<a class="link-añadir" (click)="goToProduct(product)">
-							        <div class="btn-añadir">
-							        	Ver Producto
-							        </div>
-							    	</a>
-								</div>
+								
 							</div>
 						<!--</div>-->
 					</div>

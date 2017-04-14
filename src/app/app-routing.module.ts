@@ -6,6 +6,8 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { ContactComponent  } from './contact/contact.component';
 import { TiendaComponent } from './tienda/tienda.component';
 import { ProductComponent } from './tienda/product.component';
+import { PublicationComponent } from './publication/publication.component';
+import { CategoryComponent } from './category/category.component';
 
 
 const routes: Routes = [
@@ -15,6 +17,8 @@ const routes: Routes = [
     { path: 'contact', component: ContactComponent },
     { path: 'products', component: TiendaComponent },
     { path: 'products/:id', component: ProductComponent },
+    { path: 'publications', component: PublicationComponent },
+    { path: 'categories', component: CategoryComponent },
     
 ]
 

@@ -19,7 +19,7 @@ export class TiendaComponent implements OnInit {
 	) { }
 
 	ngOnInit() {
-		let timer = Observable.timer(0, 5000);
+		let timer = Observable.timer(0, 500000000000);
 		timer.subscribe(() => this.getProducts());
 	}
 
