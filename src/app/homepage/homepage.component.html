@@ -45,67 +45,21 @@
       <div class="clear"> </div>
     </div>
   </div>
+  <!-- PRODUCTOS DESTACADOS -->
   <div class="barra-titulo barra-verde">
     Productos Destacados
   </div>
   <div class="cont-productos prod-destacados">
-    <div class="caja-producto">
-      <div class="img-producto">
-        <img src="images/producto1.jpg" />
-      </div>
-      <div class="txt-producto">
-        <h2> Titulo </h2>
-        <p> LOREM IPSUM LOREM IPSUM Lorem IPSUM </p>
-        <br>
-        <span class="precio-home"> $95.000 </span>
-      </div>
-      <a class="link-añadir" href="#">
-        <div class="btn-añadir">
-        añadir al carro
-        </div>
-      </a>
-    </div>
-    <div class="caja-producto">
-      <div class="img-producto">
-        <img src="images/producto2.jpg" />
-      </div>
-      <div class="txt-producto">
-        <h2> Titulo </h2>
-        <p> LOREM IPSUM LOREM IPSUM Lorem IPSUM </p>
-        <br>
-        <span class="precio-home"> $95.000 </span>
-      </div>
-      <a class="link-añadir" href="#">
-        <div class="btn-añadir">
-        añadir al carro
-        </div>
-      </a>
-    </div>
-     <div class="caja-producto">
-      <div class="img-producto">
-        <img src="images/producto3.jpg" />
-      </div>
-      <div class="txt-producto">
-        <h2> Titulo </h2>
-        <p> LOREM IPSUM LOREM IPSUM Lorem IPSUM </p>
-        <br>
-        <span class="precio-home"> $95.000 </span>
-      </div>
-      <a class="link-añadir" href="#">
-        <div class="btn-añadir">
-        añadir al carro
-        </div>
-      </a>
-    </div>
-     <div class="caja-producto">
+
+    <div class="caja-producto" *ngFor="let product of productsMostSales">
       <div class="img-producto">
         <img src="images/producto4.jpg" />
       </div>
       <div class="txt-producto">
-        <h2> Titulo </h2>
-        <p> LOREM IPSUM LOREM IPSUM Lorem IPSUM </p>
+        <h2> {{product.name_product}} </h2>
+        <p> {{product.description}} </p>
         <br>
-        <span class="precio-home"> $95.000 </span>
+        <span class="precio-home"> ${{product.value}} </span>
       </div>
       <a class="link-añadir" href="#">
         <div class="btn-añadir">
@@ -113,22 +67,27 @@
         </div>
       </a>
     </div>
+
+
   </div>
   <div class="clear"> </div>
 
+  
+  <!-- PRODUCTOS RECIENTES -->
   <div class="barra-titulo barra-roja">
     Productos recientes
   </div>
   <div class="cont-productos prod-recientes">
-    <div class="caja-producto">
+
+     <div class="caja-producto" *ngFor="let product of lastProducts">
       <div class="img-producto">
         <img src="images/producto1.jpg" />
       </div>
       <div class="txt-producto">
-        <h2> Titulo </h2>
-        <p> LOREM IPSUM LOREM IPSUM Lorem IPSUM </p>
+        <h2> {{product.name_product}} </h2>
+        <p> {{product.description}} </p>
         <br>
-        <span class="precio-home"> $95.000 </span>
+        <span class="precio-home"> ${{product.value}} </span>
       </div>
       <a class="link-añadir" href="#">
         <div class="btn-añadir">
@@ -136,54 +95,7 @@
         </div>
       </a>
     </div>
-    <div class="caja-producto">
-      <div class="img-producto">
-        <img src="images/producto2.jpg" />
-      </div>
-      <div class="txt-producto">
-        <h2> Titulo </h2>
-        <p> LOREM IPSUM LOREM IPSUM Lorem IPSUM </p>
-        <br>
-        <span class="precio-home"> $95.000 </span>
-      </div>
-      <a class="link-añadir" href="#">
-        <div class="btn-añadir">
-        añadir al carro
-        </div>
-      </a>
-    </div>
-     <div class="caja-producto">
-      <div class="img-producto">
-        <img src="images/producto3.jpg" />
-      </div>
-      <div class="txt-producto">
-        <h2> Titulo </h2>
-        <p> LOREM IPSUM LOREM IPSUM Lorem IPSUM </p>
-        <br>
-        <span class="precio-home"> $95.000 </span>
-      </div>
-      <a class="link-añadir" href="#">
-        <div class="btn-añadir">
-        añadir al carro
-        </div>
-      </a>
-    </div>
-     <div class="caja-producto">
-      <div class="img-producto">
-        <img src="images/producto4.jpg" />
-      </div>
-      <div class="txt-producto">
-        <h2> Titulo </h2>
-        <p> LOREM IPSUM LOREM IPSUM Lorem IPSUM </p>
-        <br>
-        <span class="precio-home"> $95.000 </span>
-      </div>
-      <a class="link-añadir" href="#">
-        <div class="btn-añadir">
-        añadir al carro
-        </div>
-      </a>
-    </div>
+
   </div>
   <div class="clear"></div>
 

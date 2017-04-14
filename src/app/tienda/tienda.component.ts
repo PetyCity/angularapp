@@ -16,7 +16,7 @@ export class TiendaComponent implements OnInit {
 	constructor(
 		private tiendaService: TiendaService,
 		private router: Router
-	) {}
+	) { }
 
 	ngOnInit() {
 		let timer = Observable.timer(0, 5000);
@@ -31,4 +31,6 @@ export class TiendaComponent implements OnInit {
 		let productLink = ['/products', product.id];
 		this.router.navigate(productLink);
 	}
+
+	
 }
