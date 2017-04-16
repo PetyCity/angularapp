@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Rx';
+import { Category } from './category';
+import { ApiService } from 'app/api.service';
 
 @Component({
   selector: 'app-category',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryComponent implements OnInit {
 
-  constructor() { }
+	categories: Category[];
 
-  ngOnInit() {
-  }
+	constructor(
+		private apiService: ApiService
+	) { }
+
+	ngOnInit() {
+		let timer = Observable.timer(0, 500000000000);
+		timer.subscribe(() => this.getCategories());
+	}
+
+	getCategories(){
+		this.apiService.getCategories().subscribe(categories => this.categories = categories);
+	}
 
 }

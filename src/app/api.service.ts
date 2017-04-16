@@ -14,12 +14,12 @@ export class ApiService {
 
 	//GET:  Todos las publicaciones | ruta: publicationsUrl
 	getPublications(): Observable<Publication[]> {
-		return this.http.get(this.publicationsUrl).map((response: Response) => <Publication[]>response.json().products)
+		return this.http.get(this.publicationsUrl).map((response: Response) => <Publication[]>response.json().publications)
 	}
 
 	//GET:  Todos las categorias | ruta: categoriesUrl
 	getCategories(): Observable<Category[]> {
-		return this.http.get(this.categoriesUrl).map((response: Response) => <Category[]>response.json().products)
+		return this.http.get(this.categoriesUrl).map((response: Response) => <Category[]>response.json().categories)
 	}
 
 

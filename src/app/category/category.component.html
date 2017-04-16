@@ -14,14 +14,22 @@
 				<div class="todas-categorias col-9" >
 					<u>Categorias de Nuestros Productos</u>
 				</div>
+				<div class="pagination"><pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls></div>
+
 				
 			</div>
 			<div class="row">
 				<div class=" col-12" >
 					<div class="row" >
-						<div class="col-xs-6 col-md-3">
+						<div class="col-xs-6 col-md-3" *ngFor="let category of categories | paginate: { itemsPerPage: 9, currentPage: p }">
 							<a href="#" class="thumbnail">
-							  <img src="/images/producto3.jpg" >
+							  	<img src="/images/producto3.jpg" >
+							  	<div class="row product-letra">
+									{{category.name_category}}
+								</div>
+								<div class="row product-valor">
+									{{category.details}}
+								</div>
 							</a>
 						</div>
 					</div>
