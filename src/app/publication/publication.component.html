@@ -19,31 +19,18 @@
 			<div class="row">
 				<div class=" col-12" >
 					<div class="row" >
-						<!--<div class="container-prod" *ngFor="let product of products">-->
-							<div class="col-4 contenedor-producto" *ngFor="let product of products | paginate: { itemsPerPage: 9, currentPage: p }">
-								<div class="row">
-									<div class="col-12 ">
-									<img src="images/producto1.jpg" />
+							<div class="col-12 contenedor-producto" *ngFor="let publication of publications | paginate: { itemsPerPage: 9, currentPage: p }">
+								<a class="thumbnail " (click)="goToPublication(publication)">
+									<div class="panel panel-primary"> 
+										<div class="panel-heading"> 
+											<h3 class="panel-title">{{publication.title}}</h3> 
+										</div> 
+										<div class="panel-body"> 
+											{{publication.body_publication}}
+										</div> 
 									</div>
-								
-								</div>
-								<div class="row detalles-producto">
-									<div class="col-8 product-letra">
-										{{product.name_product}}
-									</div>
-									<div class="col-4 product-valor">
-										$ {{product.value}}
-									</div>
-								</div>
-								<div class="row ver-producto">
-									<a class="link-añadir" (click)="goToProduct(product)">
-							        <div class="btn-añadir">
-							        	Ver Producto
-							        </div>
-							    	</a>
-								</div>
+								</a> 
 							</div>
-						<!--</div>-->
 					</div>
 				</div>
 			</div>

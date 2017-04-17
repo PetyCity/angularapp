@@ -17,6 +17,8 @@ import { ProductComponent } from './tienda/product.component';
 import { ViewProductComponent } from './view-product/view-product.component';
 import { PublicationComponent } from './publication/publication.component';
 import { CategoryComponent } from './category/category.component';
+import { CategorybyidComponent } from './categorybyid/categorybyid.component';
+import { PublicationByIdComponent } from './publication-by-id/publication-by-id.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { CategoryComponent } from './category/category.component';
     TiendaComponent,
     ViewProductComponent,
     PublicationComponent,
-    CategoryComponent
+    CategoryComponent,
+    CategorybyidComponent,
+    PublicationByIdComponent
   ],
   imports: [
     BrowserModule,

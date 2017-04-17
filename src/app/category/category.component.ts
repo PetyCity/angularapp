@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
+import { Router } from '@angular/router';
 import { Category } from './category';
 import { ApiService } from 'app/api.service';
 
@@ -13,7 +14,8 @@ export class CategoryComponent implements OnInit {
 	categories: Category[];
 
 	constructor(
-		private apiService: ApiService
+		private apiService: ApiService,
+		private router: Router
 	) { }
 
 	ngOnInit() {
@@ -23,6 +25,11 @@ export class CategoryComponent implements OnInit {
 
 	getCategories(){
 		this.apiService.getCategories().subscribe(categories => this.categories = categories);
+	}
+
+	goToCategory (category: Category): void{
+		let categoryLink = ['/categories', category.id];
+		this.router.navigate(categoryLink);
 	}
 
 }

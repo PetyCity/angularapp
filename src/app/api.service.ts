@@ -17,11 +17,22 @@ export class ApiService {
 		return this.http.get(this.publicationsUrl).map((response: Response) => <Publication[]>response.json().publications)
 	}
 
+	//GET: Una sola publicacion | ruta: publicationsUrl
+	getPublication(id: number){
+		return this.http.get(this.publicationsUrl + "/" + id + '.json');
+	}
 	//GET:  Todos las categorias | ruta: categoriesUrl
 	getCategories(): Observable<Category[]> {
 		return this.http.get(this.categoriesUrl).map((response: Response) => <Category[]>response.json().categories)
 	}
 
+	//GET: Una sola categoria | ruta: categoriesUrl
+	getCategory(id: number){
+		return this.http.get(this.categoriesUrl + "/" + id + '.json');
+	}
+
+	
+	
 
 
 }
