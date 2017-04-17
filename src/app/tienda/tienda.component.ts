@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 import { Product } from './tienda';
+import { Category } from 'app/category/category';
 import { TiendaService } from './tienda.service';
+import { ApiService } from 'app/api.service';
 
 @Component({
   selector: 'app-tienda',
@@ -12,15 +14,20 @@ import { TiendaService } from './tienda.service';
 export class TiendaComponent implements OnInit {
 
   	products: Product[];
+  	productsMostSales: Product[];
+  	categories: Category[];
 
 	constructor(
 		private tiendaService: TiendaService,
+		private apiService: ApiService,
 		private router: Router
-	) {}
+	) { }
 
 	ngOnInit() {
-		let timer = Observable.timer(0, 5000);
+		let timer = Observable.timer(0, 500000000000);
 		timer.subscribe(() => this.getProducts());
+		timer.subscribe(() => this.getMostSales());
+		timer.subscribe(() => this.getCategories());
 	}
 
 	getProducts(){
@@ -31,4 +38,20 @@ export class TiendaComponent implements OnInit {
 		let productLink = ['/products', product.id];
 		this.router.navigate(productLink);
 	}
+
+	getMostSales(){
+		this.tiendaService.getMostSales().subscribe(products => this.productsMostSales = products);
+	}
+
+
+	getCategories(){
+		this.apiService.getCategories().subscribe(categories => this.categories = categories);
+	}
+
+	goToCategory (category: Category): void{
+		let categoryLink = ['/categories', category.id];
+		this.router.navigate(categoryLink);
+	}
+
+	
 }

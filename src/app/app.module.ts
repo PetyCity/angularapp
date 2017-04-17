@@ -12,7 +12,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { ContactComponent } from './contact/contact.component';
 import { TiendaComponent } from './tienda/tienda.component';
 import { TiendaService } from './tienda/tienda.service';
+import { ApiService } from './api.service';
 import { ProductComponent } from './tienda/product.component';
+import { ViewProductComponent } from './view-product/view-product.component';
+import { PublicationComponent } from './publication/publication.component';
+import { CategoryComponent } from './category/category.component';
+import { CategorybyidComponent } from './categorybyid/categorybyid.component';
+import { PublicationByIdComponent } from './publication-by-id/publication-by-id.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +27,12 @@ import { ProductComponent } from './tienda/product.component';
     HomepageComponent,
     ContactComponent,
     ProductComponent,
-    TiendaComponent
+    TiendaComponent,
+    ViewProductComponent,
+    PublicationComponent,
+    CategoryComponent,
+    CategorybyidComponent,
+    PublicationByIdComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +43,8 @@ import { ProductComponent } from './tienda/product.component';
   ],
   providers: [
     TiendaService,
-    PostService
+    PostService,
+    ApiService
   ],
   bootstrap: [AppComponent]
 })

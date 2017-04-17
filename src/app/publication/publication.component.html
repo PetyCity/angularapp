@@ -1,0 +1,53 @@
+<div class="barra-titulo">
+	PUBLICACIONES
+</div>
+
+<div class="breadcrumbs">
+	Home/publicaciones
+</div>
+
+<div class="container" >
+
+	<div class="row">
+		<div class="col-9">
+			<div class="row" >
+				<div class="todas-publicaciones col-9" >
+					<u>Todas las publicaciones</u>
+				</div>
+				
+			</div>
+			<div class="row">
+				<div class=" col-12" >
+					<div class="row" >
+							<div class="col-12 contenedor-producto" *ngFor="let publication of publications | paginate: { itemsPerPage: 9, currentPage: p }">
+								<a class="thumbnail " (click)="goToPublication(publication)">
+									<div class="panel panel-primary"> 
+										<div class="panel-heading"> 
+											<h3 class="panel-title">{{publication.title}}</h3> 
+										</div> 
+										<div class="panel-body"> 
+											{{publication.body_publication}}
+										</div> 
+									</div>
+								</a> 
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+			
+
+		<div class=" col-3" >
+			
+
+	
+
+		</div>
+
+		
+
+
+
+<div class="pagination"><pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls></div>
+
+

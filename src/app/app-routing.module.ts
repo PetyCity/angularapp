@@ -6,6 +6,10 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { ContactComponent  } from './contact/contact.component';
 import { TiendaComponent } from './tienda/tienda.component';
 import { ProductComponent } from './tienda/product.component';
+import { PublicationComponent } from './publication/publication.component';
+import { CategoryComponent } from './category/category.component';
+import { CategorybyidComponent } from './categorybyid/categorybyid.component';
+import { PublicationByIdComponent } from './publication-by-id/publication-by-id.component';
 
 
 const routes: Routes = [
@@ -15,7 +19,10 @@ const routes: Routes = [
     { path: 'contact', component: ContactComponent },
     { path: 'products', component: TiendaComponent },
     { path: 'products/:id', component: ProductComponent },
-    
+    { path: 'publications', component: PublicationComponent },
+    { path: 'publications/:id', component: PublicationByIdComponent },
+    { path: 'categories', component: CategoryComponent },
+    { path: 'categories/:id', component: CategorybyidComponent },
 ]
 
 @NgModule({
