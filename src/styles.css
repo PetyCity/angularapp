@@ -80,3 +80,16 @@ a.link-añadir {
 .navegacion-mascotas li.nav-item.active a.nav-link {
     background-color: #292b2c;
 }
+.form-group {
+    float: left;
+    width: 45%;
+    min-width: 350px;
+    margin: 0px 10px;
+}
+.btn-crear{
+    margin-top: 15px;
+}
+.align-left{
+    float: left;
+    padding: 0px;
+}

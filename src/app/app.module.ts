@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {Ng2PaginationModule} from 'ng2-pagination';
+import { Ng2PaginationModule} from 'ng2-pagination';
 
 import { AppComponent } from './app.component';
 import { PostListComponent } from './post/post-list.component';
@@ -14,11 +14,13 @@ import { TiendaComponent } from './tienda/tienda.component';
 import { TiendaService } from './tienda/tienda.service';
 import { ApiService } from './api.service';
 import { ProductComponent } from './tienda/product.component';
-import { ViewProductComponent } from './view-product/view-product.component';
-import { PublicationComponent } from './publication/publication.component';
-import { CategoryComponent } from './category/category.component';
 import { CategorybyidComponent } from './categorybyid/categorybyid.component';
-import { PublicationByIdComponent } from './publication-by-id/publication-by-id.component';
+import { CategoryComponent } from './category/category.component';
+import { ProductNewComponent } from './tienda/product-new.component';
+import { PublicationComponent } from './publication/publication.component';
+import { BlogComponent } from './publication/blog.component';
+import { BlogNewComponent } from './publication/blog-new.component';
+import { PublicationService } from './publication/publication.service';
 
 @NgModule({
   declarations: [
@@ -27,12 +29,13 @@ import { PublicationByIdComponent } from './publication-by-id/publication-by-id.
     HomepageComponent,
     ContactComponent,
     ProductComponent,
+    ProductNewComponent,
     TiendaComponent,
-    ViewProductComponent,
-    PublicationComponent,
+    BlogNewComponent,
+    BlogComponent,
     CategoryComponent,
     CategorybyidComponent,
-    PublicationByIdComponent
+    PublicationComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,7 @@ import { PublicationByIdComponent } from './publication-by-id/publication-by-id.
   ],
   providers: [
     TiendaService,
+    PublicationService,
     PostService,
     ApiService
   ],

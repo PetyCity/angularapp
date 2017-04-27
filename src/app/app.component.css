@@ -6,7 +6,7 @@
     font-size: 14px;
 }
 .navegacion-mascotas li.nav-item.active a.nav-link {
-    color: #3FD2BF;
+    color: #FFF;
 }
 .navegacion-mascotas li.nav-item {
     margin: 0px 15px;
@@ -39,5 +39,8 @@
 .enlaces-footer li {
     float: left;
     width: 100px;
+}
+.navegacion-mascotas li.nav-item.active a.nav-link:hover {
+    color: #3FD2BF;
 }
 

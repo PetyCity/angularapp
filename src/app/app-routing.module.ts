@@ -6,10 +6,12 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { ContactComponent  } from './contact/contact.component';
 import { TiendaComponent } from './tienda/tienda.component';
 import { ProductComponent } from './tienda/product.component';
-import { PublicationComponent } from './publication/publication.component';
 import { CategoryComponent } from './category/category.component';
 import { CategorybyidComponent } from './categorybyid/categorybyid.component';
-import { PublicationByIdComponent } from './publication-by-id/publication-by-id.component';
+import { ProductNewComponent } from './tienda/product-new.component';
+import { BlogComponent } from './publication/blog.component';
+import { PublicationComponent } from './publication/publication.component';
+import { BlogNewComponent } from './publication/blog-new.component';
 
 
 const routes: Routes = [
@@ -18,11 +20,13 @@ const routes: Routes = [
     { path: 'posts', component: PostListComponent},
     { path: 'contact', component: ContactComponent },
     { path: 'products', component: TiendaComponent },
+    { path: 'products/new', component: ProductNewComponent },
     { path: 'products/:id', component: ProductComponent },
-    { path: 'publications', component: PublicationComponent },
-    { path: 'publications/:id', component: PublicationByIdComponent },
     { path: 'categories', component: CategoryComponent },
     { path: 'categories/:id', component: CategorybyidComponent },
+    { path: 'blog', component: PublicationComponent },
+    { path: 'blog/new', component: BlogNewComponent },
+    { path: 'blog/:id', component: BlogComponent },
 ]
 
 @NgModule({

@@ -1,53 +1,112 @@
 <div class="barra-titulo">
-	PUBLICACIONES
+	Publicaciones
 </div>
 
 <div class="breadcrumbs">
-	Home/publicaciones
+	Home/blog
 </div>
 
-<div class="container" >
+<div class="container">
+	<div class="col-9 contenedor-publicaciones">
+		<div class="blog-title" >
+			<u>Novedades de la comunidad</u>
+		</div>
 
-	<div class="row">
-		<div class="col-9">
-			<div class="row" >
-				<div class="todas-publicaciones col-9" >
-					<u>Todas las publicaciones</u>
+		<div class=" col-12">
+			<div class="contenedor-publicacion" *ngFor="let publication of publications | paginate: { itemsPerPage: 3, currentPage: p }">
+
+				<div class="img-publicacion col-md-3">
+					<img src="images/producto1.jpg" />
+				</div>
+				<div class="detalles-publicacion col-md-9">
+					<div class="descripcion">
+						<strong>{{publication.title}}</strong>
+						<br><br>
+						{{publication.body_publication}}
+					</div>
+					<a class="link-añadir" (click)="goToPublication(publication)">
+					<div class="btn-añadir">
+						Leer más
+					</div>
+					</a>
+				</div>
+				<div class="clear"></div>
+			</div>
+			
+				<!--</div>-->
+		</div>
+	</div>
+
+	<div class="col-3 barra-izq" >
+		<span class="titulos-productos">Categoria de Productos</span>
+		<div class="opciones-productos">
+			<a href="">Accesorios para Mascotas</a> <br>
+			<a href="">Comida para mascotas</a> <br>
+			<a href="">Productos de salud</a> <br>
+			<a href="">Productos de Belleza</a> <br>
+			<a href="">Habitat para Mascotas</a> <br>
+		</div>
+
+		<span class="titulos-productos">Productos Destacados</span>
+
+		<div class="opciones-productos" >
+
+			<div>
+				IMAGEN
+			</div>
+			<div class="row">
+				<div class="col-8">
+					Producto 1
+				</div>
+				<div class="col-4">
+					1234
 				</div>
 				
 			</div>
-			<div class="row">
-				<div class=" col-12" >
-					<div class="row" >
-							<div class="col-12 contenedor-producto" *ngFor="let publication of publications | paginate: { itemsPerPage: 9, currentPage: p }">
-								<a class="thumbnail " (click)="goToPublication(publication)">
-									<div class="panel panel-primary"> 
-										<div class="panel-heading"> 
-											<h3 class="panel-title">{{publication.title}}</h3> 
-										</div> 
-										<div class="panel-body"> 
-											{{publication.body_publication}}
-										</div> 
-									</div>
-								</a> 
-							</div>
-					</div>
-				</div>
+
+			<div>
+				IMAGEN
 			</div>
-		</div>
+			<div class="row">
+				<div class="col-8">
+					Producto 2
+				</div>
+				<div class="col-4">
+					3346
+				</div>
+				
+			</div>
+
+			<div>
+				IMAGEN
+	</div>
+	<div class="productos col-9" >
+		<div class="row" >
+			<div class="col-4 " *ngFor="let product of products | paginate: { itemsPerPage: 9, currentPage: p }">
+				<a (click)="goToProduct(product)">
+					{{product.name_product}}
+				</a>
+
+			</div>
+			<div class="row">
+				<div class="col-8">
+					Producto 3
+				</div>
+				<div class="col-4">
+					353453
+				</div>
+				
+			</div>
 			
-
-		<div class=" col-3" >
-			
-
-	
-
 		</div>
 
-		
+
+	</div>
+
+	</div>
 
 
+</div>
 
 <div class="pagination"><pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls></div>
-
 
