@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { Ng2PaginationModule} from 'ng2-pagination';
+import { Angular2TokenService} from 'angular2-token';
 
 import { AppComponent } from './app.component';
 import { PostListComponent } from './post/post-list.component';
@@ -21,6 +22,9 @@ import { PublicationComponent } from './publication/publication.component';
 import { BlogComponent } from './publication/blog.component';
 import { BlogNewComponent } from './publication/blog-new.component';
 import { PublicationService } from './publication/publication.service';
+import { AccountComponent } from './account/account.component';
+import { AuthLinksComponent } from './authentication/auth-links.component';
+import { AuthenticationModule } from './authentication/authentication.module';
 
 @NgModule({
   declarations: [
@@ -36,19 +40,24 @@ import { PublicationService } from './publication/publication.service';
     CategoryComponent,
     CategorybyidComponent,
     PublicationComponent,
+    AccountComponent,
+    AuthLinksComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpModule,
-    Ng2PaginationModule
+    Ng2PaginationModule,
+    ReactiveFormsModule,
+    AuthenticationModule,
   ],
   providers: [
     TiendaService,
     PublicationService,
     PostService,
-    ApiService
+    ApiService,
+    Angular2TokenService
   ],
   bootstrap: [AppComponent]
 })
