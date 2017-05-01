@@ -16,6 +16,7 @@ export class TiendaComponent implements OnInit {
   	products: Product[];
   	productsMostSales: Product[];
   	categories: Category[];
+  	idCategory: number;
 
 	constructor(
 		private tiendaService: TiendaService,
@@ -24,7 +25,7 @@ export class TiendaComponent implements OnInit {
 	) { }
 
 	ngOnInit() {
-		let timer = Observable.timer(0, 50000);
+		let timer = Observable.timer(0, 5000000000);
 		timer.subscribe(() => this.getProducts());
 		timer.subscribe(() => this.getMostSales());
 		timer.subscribe(() => this.getCategories());
@@ -32,6 +33,18 @@ export class TiendaComponent implements OnInit {
 
 	getProducts(){
 		this.tiendaService.getProducts().subscribe(products => this.products = products);
+	}
+
+	getProductsByNameSearch(event) {
+	   console.log(event.target.value);
+	} 
+	
+	getProductsByCategory(category_id) {
+	    if (category_id == 0) { 
+	    	this.getProducts();
+	    } else {
+	    	this.apiService.getProductsByCategory(category_id).subscribe(products => this.products = products);
+	    }
 	}
 
 	goToProduct (product: Product): void{

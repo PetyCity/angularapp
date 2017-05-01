@@ -15,31 +15,52 @@
 					<u>Tienda de Productos</u>
 				</div>
 
-				<div class="pagination"><pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls></div>
-				
+
+				<div class="row">
+					<div class="pagination"><pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls></div>
+				</div>
+
+			</div>
+			<div class="row ">
+				<div class="col-7 ">
+					<select class="form-control busqueda" (change)="getProductsByCategory($event.target.options[$event.target.options.selectedIndex].id)">
+					<option id="0">Todos los productos</option>
+				        <option *ngFor="let category of categories" id="{{category.id}}">{{category.name_category}}</option>
+				     </select>
+				</div>
+				<div class="col-5">
+					<div class="input-group input-group-lg">
+					  <span class="input-group-addon glyphicon glyphicon-search" id="sizing-addon1"></span>
+					  <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1" (keyup)="getProductsByNameSearch($event)">
+					</div>
+				</div>
 			</div>
 			<div class="row">
 				<div class=" col-12" >
+					
 					<div class="row" >
-						<!--<div class="container-prod" *ngFor="let product of products">-->
-							<div class="col-4 contenedor-producto" *ngFor="let product of products | paginate: { itemsPerPage: 9, currentPage: p }">
-								<div class="row detalles-producto">
-									<div class="col-xs-6 col-md-3">
-										<a class="thumbnail producto" (click)="goToProduct(product)">
-										  <img src="/images/producto1.jpg" >
-										  	<div class="row product-letra">
-												{{product.name_product}}
-											</div>
-											<div class="row product-valor">
-												${{product.value}}
-											</div>
-										</a>
-									</div>
-									
-								</div>
+							<div class="col-4" *ngFor="let product of products | paginate: { itemsPerPage: 9, currentPage: p }">
+								<div class="row contenedor-producto" >
+							      <div class="col-7 ">
+							        <img class="img" src="images/producto1.jpg" />
+							      </div>
+							      <div class="col-5">
+								      	<div >
+								        <h2 class="product-letra"> {{product.name_product}} </h2>
+								        <span class="product-valor"> ${{product.value}}</span>
+								      </div>
+								      <a class="link-añadir" (click)="goToProduct(product)">
+								        <div class="btn-añadir">
+								        Ver Producto
+								        </div>
+								      </a>
+							      </div>
+							      
+							    </div>
+
+								
 								
 							</div>
-						<!--</div>-->
 					</div>
 				</div>
 			</div>
@@ -47,14 +68,18 @@
 			
 
 		<div class=" col-3" >
-			<span class="titulos-productos">Categoria de Productos</span>
-			<div class="opciones-productos" *ngFor="let category of categories">
-				
-				<ul class="nav nav-pills">
-					<li role="presentation" class="categoria-link"><a (click)="goToCategory(category)">{{category.name_category}}</a></li>
-				</ul>
-				
+			<span class="titulos-productos"><a routerLink='/categories'>Categoria de Productos</a></span>
+
+			<div class="row">
+				<div class="opciones-productos col-6" *ngFor="let category of categories">
+			
+					<ul class="nav nav-pills">
+						<li role="presentation" class="categoria-link"><a (click)="goToCategory(category)">{{category.name_category}}</a></li>
+					</ul>
+			
+				</div>
 			</div>
+						
 
 			<span class="titulos-productos">Productos Mas Vendidos</span>
 
@@ -88,8 +113,8 @@
 
 	
 
-		</div>
-		</div>
+			</div>
+	</div>
 
 		
 

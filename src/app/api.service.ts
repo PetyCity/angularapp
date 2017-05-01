@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import { Publication } from './publication/publication';
 import { Category } from './category/category';
+import { Product } from './tienda/tienda';
 
 @Injectable()
 export class ApiService {
@@ -14,7 +15,7 @@ export class ApiService {
 
 	//GET:  Todos las publicaciones | ruta: publicationsUrl
 	getPublications(): Observable<Publication[]> {
-		return this.http.get(this.publicationsUrl).map((response: Response) => <Publication[]>response.json().publications)
+		return this.http.get(this.publicationsUrl).map((response: Response) => <Publication[]>response.json().publications);
 	}
 
 	//GET: Una sola publicacion | ruta: publicationsUrl
@@ -23,7 +24,7 @@ export class ApiService {
 	}
 	//GET:  Todos las categorias | ruta: categoriesUrl
 	getCategories(): Observable<Category[]> {
-		return this.http.get(this.categoriesUrl).map((response: Response) => <Category[]>response.json().categories)
+		return this.http.get(this.categoriesUrl).map((response: Response) => <Category[]>response.json().categories);
 	}
 
 	//GET: Una sola categoria | ruta: categoriesUrl
@@ -31,8 +32,11 @@ export class ApiService {
 		return this.http.get(this.categoriesUrl + "/" + id + '.json');
 	}
 
-	
-	
+	//GET: Productos de una categoria | ruta: categoriesUrl
+	getProductsByCategory(id: number){
+		let url = this.categoriesUrl + "/" + id + "/" + "products";
+		return this.http.get(url).map((response: Response) => <Product[]>response.json().products)
+	}
 
-
+	
 }
