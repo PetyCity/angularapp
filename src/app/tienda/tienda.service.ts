@@ -41,5 +41,11 @@ export class TiendaService {
 		return this.http.get(this.mostSalesUrl).map((response: Response) => <Product[]>response.json().products)
 	}
 
+	//GET: Productos relacionados a un producto | ruta: productUrl
+	getProductsRelated(id: number){
+		let url = this.productUrl + "/" + id + "/" + "catego_product";
+		return this.http.get(url).map((response: Response) => <Product[]>response.json().products)
+	}
+
 
 }

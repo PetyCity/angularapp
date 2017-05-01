@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {ActivatedRoute, Params } from '@angular/router';
 import { Http } from '@angular/http';
+import { Observable } from 'rxjs/Rx';
 import { Product } from './tienda';
 import { Router } from '@angular/router';
 import { TiendaService } from './tienda.service';
@@ -19,6 +20,7 @@ export class ProductComponent implements OnInit {
   routeId: any;
   productsMostSales: Product[];
   categories: Category[];
+  productsRelated: Product[];
 
   constructor(
     private http: Http,
@@ -40,9 +42,11 @@ export class ProductComponent implements OnInit {
       .flatMap((params: Params) =>
         this.tiendaService.getProduct(+params['id']));
     productRequest.subscribe(response => this.product = response.json());
+    let timer = Observable.timer(0, 5000000000);
+    timer.subscribe(() => this.getProductsRelated(this.id));
   }
   
-  	getMostSales(){
+  getMostSales(){
 		this.tiendaService.getMostSales().subscribe(products => this.productsMostSales = products);
 	}
 
@@ -55,5 +59,9 @@ export class ProductComponent implements OnInit {
 		let categoryLink = ['/categories', category.id];
 		this.router.navigate(categoryLink);
 	}
+
+  getProductsRelated(product_id){
+    this.tiendaService.getProductsRelated(product_id).subscribe(productsRelated => this.productsRelated = productsRelated);
+  }
 
 }
