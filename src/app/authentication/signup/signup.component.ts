@@ -27,7 +27,14 @@ export class SignUpComponent implements OnInit {
     });
   }
 
+  submit(value: any) {
+  this.submitted = true;
+  if (!this.signupForm.valid) { return; }
 
+  this.authService.signUp(value.email, value.password, value.document, value.name).subscribe(
+    this.authService.redirectAfterLogin.bind(this.authService),
+    this.afterFailedSignup.bind(this));
+}
 
 
   afterFailedSignup(errors: any) {
