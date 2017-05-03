@@ -40,3 +40,6 @@
     box-shadow: 0 0 5px #ccc;
     padding: 10px;
 }
+a{
+    cursor: pointer;
+}

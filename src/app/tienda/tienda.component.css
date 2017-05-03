@@ -10,7 +10,7 @@
     font-family: cursive;
 }
 .contenedor-producto{
-    width: 105%;
+    width: 90%;
     padding: 10px;
     float: left;
     text-align: center;
@@ -112,22 +112,37 @@ a.link-añadir {
 }
 .btn-añadir {
     background: #3F3F3F;
-    padding: 5px 10px;
+        padding: 5%;
     border-radius: 5px;
     max-width: 130px;
     margin: -30%;
     color: #fff;
     cursor: pointer;
-    margin-top: 34%;
-    margin-right: -10%;
+    margin: -40%;
+    margin-top: 8%;
 }
 .img{
     width: 107%;
     margin-left: -28%;
 }
+.imgMasVendidos{
+    width: 107%;
+    margin-left: 15%;
+    
+}   
 
 .busqueda{
-    width: 72%;
-    height: 49px;
+    height: 31px !important;
 }
 
+.producto-mas-vendido{
+    width: 60%;
+    margin-left: 0%;
+}
+a{
+   cursor: pointer; 
+}
+
+.todos-productos{
+    margin-top: 5%;
+}

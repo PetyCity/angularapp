@@ -43,4 +43,7 @@
 .navegacion-mascotas li.nav-item.active a.nav-link:hover {
     color: #3FD2BF;
 }
+a{
+    cursor: pointer;
+}
 

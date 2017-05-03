@@ -64,4 +64,9 @@ export class ProductComponent implements OnInit {
     this.tiendaService.getProductsRelated(product_id).subscribe(productsRelated => this.productsRelated = productsRelated);
   }
 
+  goToProduct (product: Product): void{
+    let productLink = ['/products', product.id];
+    this.router.navigate(productLink);
+  }
+
 }

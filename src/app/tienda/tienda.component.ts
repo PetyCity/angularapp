@@ -17,6 +17,7 @@ export class TiendaComponent implements OnInit {
   	productsMostSales: Product[];
   	categories: Category[];
   	idCategory: number;
+  	palabraBusqueda: string;
 
 	constructor(
 		private tiendaService: TiendaService,
@@ -34,10 +35,6 @@ export class TiendaComponent implements OnInit {
 	getProducts(){
 		this.tiendaService.getProducts().subscribe(products => this.products = products);
 	}
-
-	getProductsByNameSearch(event) {
-	   console.log(event.target.value);
-	} 
 	
 	getProductsByCategory(category_id) {
 	    if (category_id == 0) { 
@@ -66,5 +63,22 @@ export class TiendaComponent implements OnInit {
 		this.router.navigate(categoryLink);
 	}
 
-	
+	getSearchProducts(event){
+		let string = event.target.children[0].children[0].value;
+		this.palabraBusqueda = string;
+		if (string == "") { 
+			this.getProducts();
+		} else {
+			this.apiService.getSearchProducts(string).subscribe(products => this.products = products);
+	    }		
+	}
+
+	getOrden(idBsuqueda){
+		if (idBsuqueda == 1) {
+			this.apiService.getOrden("-", this.palabraBusqueda).subscribe(products => this.products = products);
+		}else{
+			this.apiService.getOrden("", this.palabraBusqueda).subscribe(products => this.products = products);
+		}
+	}
+
 }

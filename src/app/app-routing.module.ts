@@ -5,6 +5,7 @@ import { PostListComponent } from './post/post-list.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ContactComponent  } from './contact/contact.component';
 import { TiendaComponent } from './tienda/tienda.component';
+import { CompanyComponent } from './company/company.component';
 import { ProductComponent } from './tienda/product.component';
 import { CategoryComponent } from './category/category.component';
 import { CategorybyidComponent } from './categorybyid/categorybyid.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
     { path: 'posts', component: PostListComponent},
     { path: 'contact', component: ContactComponent },
     { path: 'products', component: TiendaComponent },
+    { path: 'companies', component: CompanyComponent },
     { path: 'products/new', component: ProductNewComponent },
     { path: 'products/:id', component: ProductComponent },
     { path: 'categories', component: CategoryComponent },

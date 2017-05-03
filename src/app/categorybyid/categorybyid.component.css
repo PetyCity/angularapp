@@ -4,3 +4,7 @@
     text-transform: uppercase;
     font-family: cursive;
 }
+
+a{
+    cursor: pointer;
+}
