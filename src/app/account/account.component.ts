@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Angular2TokenService} from 'angular2-token';
 
 @Component({
   selector: 'app-account',
@@ -8,28 +7,9 @@ import { Angular2TokenService} from 'angular2-token';
 })
 export class AccountComponent implements OnInit {
 
-  constructor(private tokenService: Angular2TokenService) {
-      this.tokenService.init({
-        registerAccountPath: 'http://localhost:3000/api/v1/auth'
-
-
-      });
-   }
+  constructor() { }
 
   ngOnInit() {
-  }
-
-  signUp(){
-    this.tokenService.registerAccount({
-      email:                'example@example.org',
-      password:             'secretPassword',
-      passwordConfirmation: 'secretPassword',
-      document:             '1031167980',
-      name_user:            'Lumikai'
-    }).subscribe(
-      res =>      console.log(res),
-      error =>    console.log(error)
-      );
   }
 
 }

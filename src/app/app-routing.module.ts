@@ -13,6 +13,7 @@ import { BlogComponent } from './publication/blog.component';
 import { PublicationComponent } from './publication/publication.component';
 import { BlogNewComponent } from './publication/blog-new.component';
 import { AccountComponent} from './account/account.component';
+import { LoggedInGuard } from './authentication/logged-in-guard.service';
 
 
 const routes: Routes = [
@@ -28,7 +29,11 @@ const routes: Routes = [
     { path: 'blog', component: PublicationComponent },
     { path: 'blog/new', component: BlogNewComponent },
     { path: 'blog/:id', component: BlogComponent },
-    { path: 'profile', component: AccountComponent},
+    {
+      path: 'profile',
+      loadChildren: 'app/account/account.module#AccountModule',
+      canLoad: [LoggedInGuard]
+    }
 ]
 
 @NgModule({

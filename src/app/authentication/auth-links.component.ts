@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { AuthenticationService } from './authentication.service';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-auth-links',
@@ -13,15 +13,15 @@ import { AuthenticationService } from './authentication.service';
       <div class="field">
         <button routerLink="/sign-up" routerLinkActive="active" *ngIf="isLoggedOut()" class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign Up</button>
       </div>
-      <div class="field">
-        <button (click)="logOut()" *ngIf="isLoggedIn()" class="btn btn-outline-success my-2 my-sm-0" type="submit">Log Out</button>
+      <div class="field"> 
+        <button (click)="logOut()" *ngIf="isLoggedIn()" class="btn btn-outline-success my-2 my-sm-0" type="submit">Log Out</button>   
       </div>
     </div>
   </div>
   `
 })
 export class AuthLinksComponent {
-  constructor(private authService: AuthenticationService) {}
+  constructor(private authService: AuthService) {}
 
   isLoggedIn(): boolean {
     return this.authService.isLoggedIn();

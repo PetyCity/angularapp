@@ -4,18 +4,18 @@ import {
   FormGroup,
   Validators
 } from '@angular/forms';
-import { AuthenticationService } from '../authentication.service';
+import { AuthService } from '../auth.service';
 
 @Component({
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  templateUrl: './sign-up.component.html',
+  styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
   submitted: boolean;
   signupForm: FormGroup;
 
   constructor(
-    public authService: AuthenticationService,
+    public authService: AuthService,
     private formBuilder: FormBuilder
   ) {}
 
@@ -28,16 +28,15 @@ export class SignUpComponent implements OnInit {
   }
 
   submit(value: any) {
-  this.submitted = true;
-  if (!this.signupForm.valid) { return; }
+    this.submitted = true;
+    if (!this.signupForm.valid) { return; }
 
-  this.authService.signUp(value.email, value.password, value.document, value.name).subscribe(
-    this.authService.redirectAfterLogin.bind(this.authService),
-    this.afterFailedSignup.bind(this));
-}
+    this.authService.signUp(value.email, value.password, value.document, value.name).subscribe(
+      this.authService.redirectAfterLogin.bind(this.authService),
+      this.afterFailedLogin.bind(this));
+  }
 
-
-  afterFailedSignup(errors: any) {
+  afterFailedLogin(errors: any) {
     let parsed_errors = JSON.parse(errors._body).errors;
     for (let attribute in this.signupForm.controls) {
       if (parsed_errors[attribute]) {

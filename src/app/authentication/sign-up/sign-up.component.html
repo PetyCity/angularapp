@@ -1,14 +1,14 @@
 <div class="ui middle aligned center aligned grid">
   <div class="column">
-    <form [formGroup]="loginForm" (ngSubmit)="submit(loginForm.value)" class="ui large form">
-      <app-error-label [control]="loginForm" [submitted]="submitted"></app-error-label>
+    <form [formGroup]="signupForm" (ngSubmit)="submit(signupForm.value)" class="ui large form">
+      <app-error-label [control]="signupForm" [submitted]="submitted"></app-error-label>
       <div class="ui stacked secondary  segment">
         <div class="field">
           <app-input-field [attribute]="'Email'"
              [type]="'email'"
              [placeholder]="'Email Address'"
              [icon]="'user icon'"
-             [control]="loginForm.controls['email']"
+             [control]="signupForm.controls['email']"
              [submitted]="submitted">
           </app-input-field>
         </div>
@@ -17,7 +17,7 @@
              [type]="'password'"
              [placeholder]="'Password'"
              [icon]="'lock icon'"
-             [control]="loginForm.controls['password']"
+             [control]="signupForm.controls['password']"
              [submitted]="submitted">
           </app-input-field>
         </div>
@@ -29,7 +29,7 @@
     </form>
 
     <div class="ui message">
-      New to us? <a routerLink="/signup">Register</a>
+      Have an account? <a routerLink="/login">Login</a>
     </div>
   </div>
 </div>

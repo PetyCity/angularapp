@@ -4,7 +4,7 @@ import {
   FormGroup,
   Validators
 } from '@angular/forms';
-import { AuthenticationService }      from '../authentication.service';
+import { AuthService }      from '../auth.service';
 
 @Component({
   templateUrl: './login.component.html',
@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
   constructor(
-    private authService: AuthenticationService,
+    private authService: AuthService,
     private formBuilder: FormBuilder
   ) {}
 
@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit {
       this.afterFailedLogin.bind(this)
     );
   }
+
 
   afterFailedLogin(errors: any) {
     let parsed_errors = JSON.parse(errors._body).errors;

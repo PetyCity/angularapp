@@ -25,6 +25,7 @@ import { PublicationService } from './publication/publication.service';
 import { AccountComponent } from './account/account.component';
 import { AuthLinksComponent } from './authentication/auth-links.component';
 import { AuthenticationModule } from './authentication/authentication.module';
+import { SharedModule }         from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { AuthenticationModule } from './authentication/authentication.module';
     HttpModule,
     Ng2PaginationModule,
     ReactiveFormsModule,
+    SharedModule,
     AuthenticationModule,
   ],
   providers: [
