@@ -6,6 +6,7 @@ import { Publication } from './publication/publication';
 import { Category } from './category/category';
 import { Company } from './tienda/company';
 import { Product } from './tienda/tienda';
+import { User } from './users/user';
 
 @Injectable()
 export class ApiService {
@@ -14,6 +15,8 @@ export class ApiService {
 	private companiesUrl = 'http://localhost:3000/api/v1/companies';
 	private productSearchUrl = 'http://localhost:3000/api/v1/products/search?q='
 	private productosOrdenUrl = 'http://localhost:3000/api/v1/products/search?q='
+	private productosFiltro = 'http://localhost:3000/api/v1/products/search?'
+	private usersAdmin = 'http://localhost:3000/api/v1/admin/users/2/users/search?'
 
 	constructor(private http: Http) {}
 
@@ -46,16 +49,41 @@ export class ApiService {
 	getCompanies(): Observable<Company[]> {
 		return this.http.get(this.companiesUrl).map((response: Response) => <Company[]>response.json().companies);
 	}
+	
+	
 
-	//GET: Productos | ruta:  productSearchUrl
+	getProductosFiltro(categoria, palabra, orden, parametro): Observable<Product[]> {
+		let urlCategory = "category_id=" + categoria;
+		let urlPalabra = "&q=" + palabra;
+		let urlOrden = "&sort=" + orden;
+		
+		let url = this.productosFiltro ;
 
-	getSearchProducts(string: string):Observable<Product[]>{
-		let url = this.productSearchUrl + string + "&select_product=name_product, value";
+		if (categoria != 0) {
+			url = this.productosFiltro + urlCategory;
+		}
+
+		if (palabra == undefined || palabra == "") {
+			url = url + urlOrden + parametro;
+			
+		}else{
+			url = url + urlPalabra + urlOrden + parametro;
+			
+		}
+		console.log(url);
 		return this.http.get(url).map((response: Response) => <Product[]>response.json().products);
 	}
 
-	getOrden(orden: string, string: string){
-		let url = this.productosOrdenUrl+ string + "&sort="+ orden + "name_product";
-		return this.http.get(url).map((response: Response) => <Product[]>response.json().products);
+	getUsersAdmin(palabra):Observable<User[]>{
+		palabra = "a";
+		let url = "";
+		if (palabra != "") { 
+			url = this.usersAdmin + "q=" + palabra + "&select_user=id,name_user,email";
+			return this.http.get(url).map((response: Response) => <User[]>response.json().users);
+		} else {
+			url = this.usersAdmin + "select_user=id,name_user,email";
+			return this.http.get(url).map((response: Response) => <User[]>response.json().users);
+		}
+		
 	}
 }

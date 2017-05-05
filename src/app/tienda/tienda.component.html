@@ -16,21 +16,16 @@
 
 			</div>
 			<div class="row ">
-				<div class="col-4">
+				<div class="col-3">
 					<div class=row>
-						<div class="col-5">
-							<p>Productos por Categoria</p>
-						</div>
-						<div class="col-7">
-							<select class="form-control busqueda" (change)="getProductsByCategory($event.target.options[$event.target.options.selectedIndex].id)">
-								<option id="0">Todos los productos</option>
-							    <option *ngFor="let category of categories" id="{{category.id}}">{{category.name_category}}</option>
-							</select>
-						</div>
+						<select class="form-control busqueda" (change)="getProductsByCategory($event.target.options[$event.target.options.selectedIndex].id)">
+							<option id="0">Todos los productos</option>
+						    <option *ngFor="let category of categories" id="{{category.id}}">{{category.name_category}}</option>
+						</select>
 					</div>
 					
 				</div>
-				<div class="col-4">
+				<div class="col-3">
 					<form (ngSubmit)="getSearchProducts($event)">
 						<div class="input-group">
 					      <input type="text" class="form-control" placeholder="Producto">
@@ -40,13 +35,19 @@
 					    </div>
 					</form>
 				</div>
-				<div class="col-4">
+				<div class="col-3">
 					<div >
 						<select class="form-control busqueda" (change)="getOrden($event.target.options[$event.target.options.selectedIndex].id)">
-							<option id="1">Ascendentemente</option>
-							<option id="2">Descendentemente</option>
+							<option id="">Ascendentemente</option>
+							<option id="-">Descendentemente</option>
 						</select>
 					</div>
+				</div>
+				<div class="col-3">
+					<select class="form-control busqueda" (change)="getparametroBusqueda($event)">
+						    <option id="name_product" >Nombre</option>
+						    <option id="value" >Valor</option>
+					</select>
 				</div>
 			</div>
 			
@@ -55,31 +56,36 @@
 					<div class="pagination"><pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls></div>
 				</div>
 				<div class=" col-12" >
-					
-					<div class="row" >
-						<div class="col-4" *ngFor="let product of products | paginate: { itemsPerPage: 9, currentPage: p }">
-							<div class="row contenedor-producto" >
-						      <div class="col-7 ">
-						        <img class="img" src="images/producto1.jpg" />
-						      </div>
-						      <div class="col-5">
-							      	<div >
-							        <h2 class="product-letra"> {{product.name_product}} </h2>
-							        <span class="product-valor"> ${{product.value}}</span>
-							      </div>
-							      <a class="link-añadir" (click)="goToProduct(product)">
-							        <div class="btn-añadir">
-							        Ver Producto
-							        </div>
-							      </a>
-						      </div>
-						      
-						    </div>
+					<!-- Page Content -->
+					    <!-- Team Members Row -->
+					    <div class="row">
 
-								
-								
-							</div>
-					</div>
+					        <div class="col-lg-4 col-sm-6 text-center" *ngFor="let product of products | paginate: { itemsPerPage: 9, currentPage: p }">
+					            <img class="img-circle img-responsive img-center img" src="images/producto1.jpg" alt="">
+					            <h3> {{product.name_product}} 
+					            </h3>
+					            <p class="product-valor"> ${{product.value}} </p>
+					            
+					            <a  (click)="goToProduct(product)">
+							        <button type="button" class="btn btn-primary btn-añadir">Ver Producto</button>
+							     </a>
+					            <hr>
+					        </div>
+
+					        
+					    </div>
+
+					    <hr>
+
+					    <!-- Footer -->
+					<!-- /.container -->
+
+					<!-- jQuery -->
+					<script src="js/jquery.js"></script>
+
+					<!-- Bootstrap Core JavaScript -->
+					<script src="js/bootstrap.min.js"></script>
+					
 				</div>
 				<div class="row">
 					<div class="pagination"><pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls></div>

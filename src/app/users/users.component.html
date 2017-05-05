@@ -1,0 +1,41 @@
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Introduction Row -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Usuarios
+                <small>Administrador</small>
+            </h1>
+           
+        </div>
+    </div>
+
+    <!-- Team Members Row -->
+    <div class="row">
+
+        <div class="col-lg-4 col-sm-6 text-center" *ngFor="let user of users | paginate: { itemsPerPage: 9, currentPage: p }">
+            <img class="img-circle img-responsive img-center" src="http://eslamoda.com/wp-content/uploads/sites/2/2015/10/ojos-lindos.jpg" alt="">
+            <h3> {{user.name_user}} 
+            </h3>
+            <p> {{user.email}} </p>
+            
+            <div class="btn-añadir">
+                Ver Usuario
+            </div>
+            <hr>
+        </div>
+        
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+</div>
+<!-- /.container -->
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>

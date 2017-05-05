@@ -17,7 +17,10 @@ export class TiendaComponent implements OnInit {
   	productsMostSales: Product[];
   	categories: Category[];
   	idCategory: number;
-  	palabraBusqueda: string;
+  	palabra: string;
+  	orden: string;
+  	parametro: string;
+  	
 
 	constructor(
 		private tiendaService: TiendaService,
@@ -30,19 +33,18 @@ export class TiendaComponent implements OnInit {
 		timer.subscribe(() => this.getProducts());
 		timer.subscribe(() => this.getMostSales());
 		timer.subscribe(() => this.getCategories());
+
+		this.idCategory = 0;
+		this.orden = "";
+		this.parametro = "name_product";
+
 	}
 
 	getProducts(){
 		this.tiendaService.getProducts().subscribe(products => this.products = products);
 	}
 	
-	getProductsByCategory(category_id) {
-	    if (category_id == 0) { 
-	    	this.getProducts();
-	    } else {
-	    	this.apiService.getProductsByCategory(category_id).subscribe(products => this.products = products);
-	    }
-	}
+
 
 	goToProduct (product: Product): void{
 		let productLink = ['/products', product.id];
@@ -63,22 +65,34 @@ export class TiendaComponent implements OnInit {
 		this.router.navigate(categoryLink);
 	}
 
+	getProductsByCategory(category_id) {
+		this.idCategory = category_id;
+		this.getProductosFiltro(this.idCategory,this.palabra, this.orden, this.parametro);
+		
+	}
+
+	getparametroBusqueda(event){
+		this.parametro = event.target.options[event.target.options.selectedIndex].id;
+		this.getProductosFiltro(this.idCategory,this.palabra, this.orden, this.parametro);
+	}
+
 	getSearchProducts(event){
-		let string = event.target.children[0].children[0].value;
-		this.palabraBusqueda = string;
-		if (string == "") { 
-			this.getProducts();
-		} else {
-			this.apiService.getSearchProducts(string).subscribe(products => this.products = products);
-	    }		
+
+		let palabra = event.target.children[0].children[0].value;
+		console.log(palabra);
+		
+			this.palabra = event.target.children[0].children[0].value;
+			this.getProductosFiltro(this.idCategory,this.palabra, this.orden, this.parametro);
+		
 	}
 
-	getOrden(idBsuqueda){
-		if (idBsuqueda == 1) {
-			this.apiService.getOrden("-", this.palabraBusqueda).subscribe(products => this.products = products);
-		}else{
-			this.apiService.getOrden("", this.palabraBusqueda).subscribe(products => this.products = products);
-		}
+	getOrden(caracter){
+		this.orden = caracter;
+		this.getProductosFiltro(this.idCategory,this.palabra, this.orden, this.parametro);
 	}
 
+	getProductosFiltro(categoria, palabra, orden, parametro){
+		console.log(categoria,palabra,orden,parametro);
+		this.apiService.getProductosFiltro(categoria, palabra, orden, parametro).subscribe(products => this.products = products);
+	}
 }

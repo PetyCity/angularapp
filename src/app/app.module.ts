@@ -22,6 +22,8 @@ import { BlogComponent } from './publication/blog.component';
 import { BlogNewComponent } from './publication/blog-new.component';
 import { PublicationService } from './publication/publication.service';
 import { CompanyComponent } from './company/company.component';
+import { UsersComponent } from './users/users.component';
+import { UsersbyidComponent } from './usersbyid/usersbyid.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { CompanyComponent } from './company/company.component';
     CategorybyidComponent,
     PublicationComponent,
     CompanyComponent,
+    UsersComponent,
+    UsersbyidComponent,
   ],
   imports: [
     BrowserModule,

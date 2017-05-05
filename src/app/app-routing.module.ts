@@ -13,6 +13,7 @@ import { ProductNewComponent } from './tienda/product-new.component';
 import { BlogComponent } from './publication/blog.component';
 import { PublicationComponent } from './publication/publication.component';
 import { BlogNewComponent } from './publication/blog-new.component';
+import { UsersComponent } from './users/users.component';
 
 
 const routes: Routes = [
@@ -29,6 +30,7 @@ const routes: Routes = [
     { path: 'blog', component: PublicationComponent },
     { path: 'blog/new', component: BlogNewComponent },
     { path: 'blog/:id', component: BlogComponent },
+    { path: 'users/2/users', component: UsersComponent },
 ]
 
 @NgModule({

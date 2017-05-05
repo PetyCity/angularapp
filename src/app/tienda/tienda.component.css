@@ -45,7 +45,7 @@
 .product-valor{
     font-size: 20px;
     color: #3FD2BF;
-    margin-top: 5px;
+    
 }
 
 .product-valor-mas-vendidos{
@@ -112,18 +112,11 @@ a.link-añadir {
 }
 .btn-añadir {
     background: #3F3F3F;
-        padding: 5%;
-    border-radius: 5px;
-    max-width: 130px;
-    margin: -30%;
-    color: #fff;
-    cursor: pointer;
-    margin: -40%;
-    margin-top: 8%;
+    
 }
 .img{
-    width: 107%;
-    margin-left: -28%;
+    width: 55%;
+    
 }
 .imgMasVendidos{
     width: 107%;
