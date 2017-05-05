@@ -12,6 +12,11 @@ import { ProductNewComponent } from './tienda/product-new.component';
 import { BlogComponent } from './publication/blog.component';
 import { PublicationComponent } from './publication/publication.component';
 import { BlogNewComponent } from './publication/blog-new.component';
+import { CategoryNewComponent } from './category/category-new.component';
+import { UsersComponent } from './users/users.component';
+import { UserComponent } from './users/user.component';
+import { CompaniesComponent } from './companies/companies.component';
+import { CompanyComponent } from './companies/company.component';
 
 
 const routes: Routes = [
@@ -23,10 +28,15 @@ const routes: Routes = [
     { path: 'products/new', component: ProductNewComponent },
     { path: 'products/:id', component: ProductComponent },
     { path: 'categories', component: CategoryComponent },
+    { path: 'categories/new', component: CategoryNewComponent },
     { path: 'categories/:id', component: CategorybyidComponent },
     { path: 'blog', component: PublicationComponent },
     { path: 'blog/new', component: BlogNewComponent },
     { path: 'blog/:id', component: BlogComponent },
+    { path: 'users', component: UsersComponent },
+    { path: 'users/:id', component: UserComponent },
+    { path: 'companies', component: CompaniesComponent },
+    { path: 'companies/:id', component: CompanyComponent },
 ]
 
 @NgModule({

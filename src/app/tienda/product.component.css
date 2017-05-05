@@ -4,6 +4,15 @@
 }
 .info-prod {
     float: left;
+    background-image: url(/images/background-form2.jpg);
+    background-size: cover;
+    padding: 0px;
+}
+.info-prod .form-group{
+    width: 45%;
+    min-width: 350px;
+    margin: 20px auto;
+    float: none;
 }
 .lateral-prod {
     float: left;
@@ -39,4 +48,19 @@
 .cont-product .txt-producto p {
     box-shadow: 0 0 5px #ccc;
     padding: 10px;
+}
+.container-form {
+    background: rgba(17, 82, 112, 0.9);
+    padding: 20px;
+    margin: 40px;
+    box-shadow: 0 0 15px #000;
+    border-radius: 8px;
+    text-align: center;
+}
+.container-form h3 {
+    color: #fff;
+}
+.cover-background {
+    /*background-color: rgba(0, 0, 0, 0.3);*/
+    width: 100%;
 }

@@ -1,0 +1,30 @@
+<div class="barra-titulo">
+	Usuarios
+</div>
+
+<div class="breadcrumbs">
+	Home/usuarios
+</div>
+
+<div class="container" >
+	<div class="col-12" >
+		<div class="col-4 contenedor-detalles" *ngFor="let user of users | paginate: { itemsPerPage: 9, currentPage: p }">
+			<div class="detalles-producto">
+				<img src="/images/user-profile.png" >
+				<div class="detalles-nombre">
+					{{user.name_user}}
+				</div>
+				<div class="detalles-contacto">
+					{{user.email}}
+				</div>
+				<a class="enlace-perfil" (click)="goToUser(user)">
+					<div class="btn-añadir">
+						Ver usuario
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="clear"> </div>
+	</div>
+	<div class="pagination"><pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls></div>
+</div>

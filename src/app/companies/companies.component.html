@@ -1,0 +1,34 @@
+<div class="banner-company">
+  <div class="tit-banner-company">
+    Compañias
+  </div>
+</div>
+<div class="breadcrumbs">
+	Home/compañias
+</div>
+
+<div class="container" >
+	<div class="col-12" >
+		<div class="col-4 contenedor-detalles" *ngFor="let company of companies | paginate: { itemsPerPage: 9, currentPage: p }">
+			<div class="detalles-producto">
+				<img src="/images/profile-company.png" >
+				<div class="detalles-nombre">
+					{{company.name_comp}}
+				</div>
+				<div class="detalles-contacto">
+					{{company.city}}
+				</div>
+				<a class="enlace-perfil" (click)="goToCompany(company)">
+					<div class="btn-añadir">
+						Ver compañia
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="clear"> </div>
+	</div>
+	<div class="pagination"><pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls></div>
+</div>
+
+
+

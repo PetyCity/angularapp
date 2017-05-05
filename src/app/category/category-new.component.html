@@ -1,0 +1,31 @@
+<div class="barra-titulo">
+  Nueva categoría
+</div>
+<div class="breadcrumbs">
+  Home/Productos/nueva-categoria
+</div>
+
+<div class="cont-publication col-md-12">
+  <div class="info-publication col-md-12">
+    <div class="cover-background">
+      <div class="container-form col-md-5">
+        <form (ngSubmit)="createCategory(category)" #categoryForm='ngForm' enctype="multipart/form-data" id="form-newcategory">
+
+          <div class="form-group">
+            <label for="publication-title">
+              <h3> Crear una nueva categoría </h3>
+            </label>
+            <input type="text" class="form-control" id="name_category" required name="name_category" placeholder="Título de la categoria" #name_category='ngModel' [(ngModel)]='category.name_category'>
+          </div>
+
+          <div class="form-group">
+            <textarea form="form-newcategory" class="form-control" id="details" required name="details" placeholder="Descripción de la categoría ..." #details='ngModel' [(ngModel)]='category.details'>
+            </textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-crear" [disabled]="!categoryForm.form.valid">Crear categoría</button>
+        </form>
+  </div>
+  
+  <div class="clear"></div>
+</div>

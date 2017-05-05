@@ -21,6 +21,11 @@ import { PublicationComponent } from './publication/publication.component';
 import { BlogComponent } from './publication/blog.component';
 import { BlogNewComponent } from './publication/blog-new.component';
 import { PublicationService } from './publication/publication.service';
+import { CategoryNewComponent } from './category/category-new.component';
+import { UsersComponent } from './users/users.component';
+import { UserComponent } from './users/user.component';
+import { CompaniesComponent } from './companies/companies.component';
+import { CompanyComponent } from './companies/company.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +41,11 @@ import { PublicationService } from './publication/publication.service';
     CategoryComponent,
     CategorybyidComponent,
     PublicationComponent,
+    CategoryNewComponent,
+    UsersComponent,
+    CompaniesComponent,
+    UserComponent,
+    CompanyComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,32 @@
+<div *ngIf="user">
+  <div class="banner-users">
+  <div class="tit-banner-company">
+    Usuarios
+  </div>
+</div>
+<div class="breadcrumbs">
+  Home / Usuarios / {{user.user.name_user}}
+</div>
+<div class="container-profile col-md-12">
+    <div class="profile-left col-md-4">
+      <div class="img-profile">
+        <img src="/images/user-profile.png" alt="perfil de Usuario" />
+      </div>
+      <div class="menu-profile">
+        <a href="/#">
+          <div class="btn-success btn-menu-perfil"> Editar perfil </div>
+        </a>
+      </div>
+    </div>
+    <div class="profile-right col-md-8">
+      <div class="tit-profile">
+        Perfil público de {{user.user.name_user}}
+      </div>
+      <div class="info-profile">
+        <h4> información de contacto: </h4><br>
+        <strong>Correo electrónico: </strong>{{user.user.email}} <br>
+      </div>
+    </div>
+</div>
+</div>
+

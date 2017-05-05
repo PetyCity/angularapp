@@ -1,0 +1,33 @@
+<div *ngIf="company">
+<div class="banner-company">
+  <div class="tit-banner-company">
+    Compañias
+  </div>
+</div>
+<div class="breadcrumbs">
+  Home/Productos/{{company.company.name_comp}}
+</div>
+<div class="container-profile col-md-12">
+    <div class="profile-left col-md-4">
+      <div class="img-profile">
+        <img src="/images/profile-company.png" alt="perfil de Compañia" />
+      </div>
+      <div class="menu-profile">
+        <a href="/#">
+          <div class="btn-success btn-menu-perfil"> Editar perfil </div>
+        </a>
+      </div>
+    </div>
+    <div class="profile-right col-md-8">
+      <div class="tit-profile">
+        Perfil público de {{company.company.name_comp}}
+      </div>
+      <div class="info-profile">
+        <h4> información de contacto: </h4><br>
+        <strong>Nit: </strong>{{company.company.nit}} <br>
+        <strong>Dirección: </strong>{{company.company.address}} <br>
+        <strong>Teléfono: </strong>{{company.company.phone}} <br>
+      </div>
+    </div>
+</div>
+</div>
