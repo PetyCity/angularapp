@@ -75,15 +75,16 @@ export class ApiService {
 	}
 
 	getUsersAdmin(palabra):Observable<User[]>{
-		palabra = "a";
+		
+		let atributos =  "&select_user=id,name_user,email,document,block,sendEmail,rol,active";
 		let url = "";
 		if (palabra != "") { 
-			url = this.usersAdmin + "q=" + palabra + "&select_user=id,name_user,email";
-			return this.http.get(url).map((response: Response) => <User[]>response.json().users);
+			url = this.usersAdmin + "q=" + palabra +atributos;
+			
 		} else {
-			url = this.usersAdmin + "select_user=id,name_user,email";
-			return this.http.get(url).map((response: Response) => <User[]>response.json().users);
+			url = this.usersAdmin + atributos;
 		}
-		
+		console.log(url);
+		return this.http.get(url).map((response: Response) => <User[]>response.json().users);
 	}
 }

@@ -14,6 +14,7 @@ import { BlogComponent } from './publication/blog.component';
 import { PublicationComponent } from './publication/publication.component';
 import { BlogNewComponent } from './publication/blog-new.component';
 import { UsersComponent } from './users/users.component';
+import { CompaniesComponent } from './companies/companies.component';
 
 
 const routes: Routes = [
@@ -22,7 +23,7 @@ const routes: Routes = [
     { path: 'posts', component: PostListComponent},
     { path: 'contact', component: ContactComponent },
     { path: 'products', component: TiendaComponent },
-    { path: 'companies', component: CompanyComponent },
+    { path: 'companies', component: CompaniesComponent },
     { path: 'products/new', component: ProductNewComponent },
     { path: 'products/:id', component: ProductComponent },
     { path: 'categories', component: CategoryComponent },

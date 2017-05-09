@@ -29,10 +29,10 @@ export class TiendaComponent implements OnInit {
 	) { }
 
 	ngOnInit() {
-		let timer = Observable.timer(0, 5000000000);
-		timer.subscribe(() => this.getProducts());
-		timer.subscribe(() => this.getMostSales());
-		timer.subscribe(() => this.getCategories());
+		
+		this.getProducts();
+		this.getMostSales();
+		this.getCategories();
 
 		this.idCategory = 0;
 		this.orden = "";
@@ -65,15 +65,15 @@ export class TiendaComponent implements OnInit {
 		this.router.navigate(categoryLink);
 	}
 
-	getProductsByCategory(category_id) {
-		this.idCategory = category_id;
-		this.getProductosFiltro(this.idCategory,this.palabra, this.orden, this.parametro);
-		
+	getProductsByCategory(event) {
+		console.log(event.target.options[event.target.options.selectedIndex].id);
+		this.idCategory = event.target.options[event.target.options.selectedIndex].id;
+		this.getProductosFiltro();
 	}
 
 	getparametroBusqueda(event){
 		this.parametro = event.target.options[event.target.options.selectedIndex].id;
-		this.getProductosFiltro(this.idCategory,this.palabra, this.orden, this.parametro);
+		this.getProductosFiltro();
 	}
 
 	getSearchProducts(event){
@@ -82,17 +82,18 @@ export class TiendaComponent implements OnInit {
 		console.log(palabra);
 		
 			this.palabra = event.target.children[0].children[0].value;
-			this.getProductosFiltro(this.idCategory,this.palabra, this.orden, this.parametro);
+			this.getProductosFiltro();
 		
 	}
 
-	getOrden(caracter){
-		this.orden = caracter;
-		this.getProductosFiltro(this.idCategory,this.palabra, this.orden, this.parametro);
+	getOrden(event){
+		console.log(event.target.options[event.target.options.selectedIndex].id);
+		this.orden = event.target.options[event.target.options.selectedIndex].id;
+		this.getProductosFiltro();
 	}
 
-	getProductosFiltro(categoria, palabra, orden, parametro){
-		console.log(categoria,palabra,orden,parametro);
-		this.apiService.getProductosFiltro(categoria, palabra, orden, parametro).subscribe(products => this.products = products);
+	getProductosFiltro(){
+		console.log(this.idCategory, this.palabra, this.orden, this.parametro);
+		this.apiService.getProductosFiltro(this.idCategory, this.palabra, this.orden, this.parametro).subscribe(products => this.products = products);
 	}
 }

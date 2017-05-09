@@ -1,0 +1,21 @@
+<div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Compañias
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            
+            <div class="col-lg-4 col-sm-6 text-center" *ngFor="let company of companies | paginate: { itemsPerPage: 9, currentPage: p }">
+                <img class="img-circle img-responsive img-center" src="http://companiaslimitadasyanonimas.files.wordpress.com/2011/12/negocios03.png?w=300&h=194" alt="">
+                <h3>{{company.name_comp}}
+                </h3>
+                <h5>Direccion: {{company.address}}</h5>
+                <h5>Ciudad: {{company.city}}</h5>
+                <h5>Telefono: {{company.phone}}</h5>
+                <h5>Tipo: {{company.phone}}</h5>
+                <a  (click)="goToCompany(company)">
+			        <button type="button" class="btn btn-primary btn-añadir">Ver Compañia</button>
+			    </a>
+            </div>
+            </div>

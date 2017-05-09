@@ -18,7 +18,7 @@
 			<div class="row ">
 				<div class="col-3">
 					<div class=row>
-						<select class="form-control busqueda" (change)="getProductsByCategory($event.target.options[$event.target.options.selectedIndex].id)">
+						<select class="form-control busqueda" (change)="getProductsByCategory($event)">
 							<option id="0">Todos los productos</option>
 						    <option *ngFor="let category of categories" id="{{category.id}}">{{category.name_category}}</option>
 						</select>
@@ -37,7 +37,7 @@
 				</div>
 				<div class="col-3">
 					<div >
-						<select class="form-control busqueda" (change)="getOrden($event.target.options[$event.target.options.selectedIndex].id)">
+						<select class="form-control busqueda" (change)="getOrden($event)">
 							<option id="">Ascendentemente</option>
 							<option id="-">Descendentemente</option>
 						</select>

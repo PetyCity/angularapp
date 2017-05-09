@@ -12,7 +12,10 @@ import { ApiService } from 'app/api.service';
 export class UsersComponent implements OnInit {
 
 	users: User[];
-	palabra: string;
+	name: string;
+	email: string;
+	block: boolean;
+
 
 	constructor(
 		private apiService: ApiService,
@@ -21,14 +24,33 @@ export class UsersComponent implements OnInit {
 	ngOnInit() {
 		let timer = Observable.timer(0, 5000000000);
 		timer.subscribe(() => this.getUsersAdmin());
-		this.palabra = "";
+		this.name = "";
+		this.email = "";
 		
 	}
 
-	getUsersAdmin(){
-		this.apiService.getUsersAdmin(this.palabra).subscribe(users => this.users = users);
+	
+
+	getSearchUserByName(event){
+		this.name = event.target.children[0].children[0].value;
+		this.getUsersAdmin();
 	}
 
+	getSearchUserByCorreo(event){
+		this.email = event.target.children[0].children[0].value;
+		this.getUsersAdmin();
+	}
+
+	getSearchBlock(){
+
+	}
+
+	getUsersAdmin(){
+
+		this.apiService.getUsersAdmin(this.name).subscribe(users => this.users = users);
+		console.log("Usuarios");
+		console.log(this.users);
+	}
 
 
 }

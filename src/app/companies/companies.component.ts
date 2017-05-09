@@ -1,0 +1,32 @@
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs/Rx';
+import { Company } from './company';
+import { ApiService } from 'app/api.service';
+
+@Component({
+  selector: 'app-companies',
+  templateUrl: './companies.component.html',
+  styleUrls: ['./companies.component.css']
+})
+export class CompaniesComponent implements OnInit {
+	companies: Company[];
+
+
+	constructor(
+		private apiService: ApiService,
+		private router: Router) { }
+
+	ngOnInit() {
+		this.getCompanies();
+	}
+
+	getCompanies(){
+		this.apiService.getCompanies().subscribe(companies => this.companies = companies);
+	}
+
+	goToCompany(){
+		
+	}
+
+}
