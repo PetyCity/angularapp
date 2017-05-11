@@ -21,6 +21,7 @@ import { PublicationComponent } from './publication/publication.component';
 import { BlogComponent } from './publication/blog.component';
 import { BlogNewComponent } from './publication/blog-new.component';
 import { PublicationService } from './publication/publication.service';
+import { Angular2TokenService } from 'angular2-token';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { PublicationService } from './publication/publication.service';
     TiendaService,
     PublicationService,
     PostService,
-    ApiService
+    ApiService,
+    Angular2TokenService
   ],
   bootstrap: [AppComponent]
 })
