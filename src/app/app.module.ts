@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { Ng2PaginationModule} from 'ng2-pagination';
+import { AgmCoreModule } from 'angular2-google-maps/core';
 
 import { AppComponent } from './app.component';
 import { PostListComponent } from './post/post-list.component';
@@ -26,6 +27,7 @@ import { UsersComponent } from './users/users.component';
 import { UserComponent } from './users/user.component';
 import { CompaniesComponent } from './companies/companies.component';
 import { CompanyComponent } from './companies/company.component';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   declarations: [
@@ -46,19 +48,24 @@ import { CompanyComponent } from './companies/company.component';
     CompaniesComponent,
     UserComponent,
     CompanyComponent,
+    MapComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpModule,
-    Ng2PaginationModule
+    Ng2PaginationModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyB-1lOX2iiwxDCvUh2PS0a_OhuRcyWeNRw',
+    }),
   ],
   providers: [
     TiendaService,
     PublicationService,
     PostService,
-    ApiService
+    ApiService,
+    AgmCoreModule,
   ],
   bootstrap: [AppComponent]
 })

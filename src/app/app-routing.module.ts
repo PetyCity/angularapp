@@ -16,7 +16,8 @@ import { CategoryNewComponent } from './category/category-new.component';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './users/user.component';
 import { CompaniesComponent } from './companies/companies.component';
-import { CompanyComponent } from './companies/company.component';
+import { CompanyComponent } from './companies/company.component';MapComponent
+import { MapComponent } from './map/map.component';
 
 
 const routes: Routes = [
@@ -36,7 +37,9 @@ const routes: Routes = [
     { path: 'users', component: UsersComponent },
     { path: 'users/:id', component: UserComponent },
     { path: 'companies', component: CompaniesComponent },
+    { path: 'companies/map', component: MapComponent },
     { path: 'companies/:id', component: CompanyComponent },
+    
 ]
 
 @NgModule({

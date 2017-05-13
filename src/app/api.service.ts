@@ -14,6 +14,7 @@ export class ApiService {
 	private userUrl = 'http://localhost:3000/api/v1/admin/users/';
 	private usersUrl = 'http://localhost:3000/api/v1/admin/users/1/users/';
 	private companyUrl = 'http://localhost:3000/api/v1/admin/users/1/companies';
+	private locationsUrl = 'http://localhost:3000/api/v1/admin/users/1/companies';
 
 	constructor(private http: Http) {}
 
@@ -61,6 +62,11 @@ export class ApiService {
 	//GET:  Todos los usuarios | ruta: usersUrl
 	getCompanies(): Observable<User[]> {
 		return this.http.get(this.companyUrl).map((response: Response) => <User[]>response.json().companies)
+	}
+
+	//GET:  Todos los usuarios | ruta: usersUrl
+	getLocations(): Observable<User[]> {
+		return this.http.get(this.locationsUrl).map((response: Response) => <User[]>response.json().companies)
 	}
 
 }
