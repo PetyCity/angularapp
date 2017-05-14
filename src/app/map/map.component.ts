@@ -12,7 +12,7 @@ import { ApiService } from 'app/api.service';
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements OnInit {
-  title: string = 'My first angular2-google-maps project';
+  title: string = 'Mapa de compañias';
   lat: number = 4.6381991;
   lng: number = -74.0884238;
   zoom: number = 16;

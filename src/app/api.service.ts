@@ -10,7 +10,7 @@ import { User } from './users/users';
 export class ApiService {
 	private publicationsUrl = 'http://localhost:3000/api/v1/publications';
 	private categoriesUrl = 'http://localhost:3000/api/v1/categories';
-	private newcategoryUrl = 'http://localhost:3000/api/v1/admin/users/1/categories';
+	private newcategoryUrl = 'http://localhost:3000/api/v1/admin/users/2/categories';
 	private userUrl = 'http://localhost:3000/api/v1/admin/users/';
 	private usersUrl = 'http://localhost:3000/api/v1/admin/users/1/users/';
 	private companyUrl = 'http://localhost:3000/api/v1/admin/users/1/companies';

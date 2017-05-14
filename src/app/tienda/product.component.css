@@ -4,11 +4,15 @@
 }
 .info-prod {
     float: left;
+    padding: 0px;
+}
+.cont-product .info-produ {
+    float: left;
     background-image: url(/images/background-form2.jpg);
     background-size: cover;
     padding: 0px;
 }
-.info-prod .form-group{
+.info-produ .form-group{
     width: 45%;
     min-width: 350px;
     margin: 20px auto;

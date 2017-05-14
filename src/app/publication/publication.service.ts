@@ -7,7 +7,7 @@ import { Publication } from './publication';
 @Injectable()
 export class PublicationService {
 	private publicationUrl = 'http://localhost:3000/api/v1/publications';
-	private newpublicationUrl = 'http://localhost:3000/api/v1/costum/users/3/publications';
+	private newpublicationUrl = 'http://localhost:3000/api/v1/costum/users/8/publications';
 
 	constructor(private http: Http) {}
 
