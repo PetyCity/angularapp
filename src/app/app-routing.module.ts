@@ -12,6 +12,8 @@ import { ProductNewComponent } from './tienda/product-new.component';
 import { BlogComponent } from './publication/blog.component';
 import { PublicationComponent } from './publication/publication.component';
 import { BlogNewComponent } from './publication/blog-new.component';
+import { LoginFormComponent } from './authentication/loginform.component';
+import { RegisterFormComponent } from './authentication/loginregister.component';
 
 
 const routes: Routes = [
@@ -27,6 +29,8 @@ const routes: Routes = [
     { path: 'blog', component: PublicationComponent },
     { path: 'blog/new', component: BlogNewComponent },
     { path: 'blog/:id', component: BlogComponent },
+    { path: 'login', component: LoginFormComponent },
+    { path: 'register', component: RegisterFormComponent },
 ]
 
 @NgModule({

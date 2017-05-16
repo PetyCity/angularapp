@@ -43,4 +43,21 @@
 .navegacion-mascotas li.nav-item.active a.nav-link:hover {
     color: #3FD2BF;
 }
+.logo-pety {
+    min-width: 200px;
+    float: left;
+}
+.container-auth {
+    float: left;
+}
+.login-btn {
+    float: right;
+}
+.signin-btn {
+    float: right;
+    margin-left: 20px;
+}
+.logout-btn {
+    float: right;
+}
 

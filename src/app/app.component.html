@@ -1,8 +1,31 @@
 <div class="container">
-<div class="header-mascotas">
-  <div class="logo-pety">
+<div class="header-mascotas col-md-12">
+  <div class="logo-pety col-md-8">
     <img src="images/logo-pety.png" />
   </div>
+  <div class="container-auth col-md-4">
+    <a routerLink='/register'>
+      <div class="signin-btn" *ngIf="!(authService.userSignedIn$ | async)">
+        <button type="button" class="btn btn-primary">Registrarse</button>
+      </div>
+    </a>
+    <a routerLink='/login'>
+      <div class="login-btn" *ngIf="!(authService.userSignedIn$ | async)">
+        <button type="button" class="btn btn-success">Ingresar</button>
+      </div>
+    </a>
+    <a (click)="logOut()">
+      <div class="logout-btn" *ngIf="(authService.userSignedIn$ | async)">
+        <button type="button" class="btn btn-danger">Cerrar sesión</button>
+      </div>
+    </a>
+    <!--<div *ngIf="authTokenService.currentUserData" class="col l8 s12" >
+      <li class="collection-item">Email:  <b>{{authTokenService.currentUserData.email}}</b></li>
+      <li class="collection-item">Name:  <b>{{authTokenService.currentUserData.name_user}}</b></li>
+      <li class="collection-item">imagen: <b> <img src="{{authTokenService.currentUserData.image.url}}"/></b></li>
+    </div>-->
+  </div>
+  <div class="clear"></div>
 </div>
 <nav class="navbar navbar-toggleable-md  navbar-inverse bg-inverse navegacion-mascotas">
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,7 +35,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" routerLink='/home'>Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" routerLink='/products'>Tienda</a>
@@ -42,6 +65,7 @@
 
 </div>
 <div class="footer">
+   
     <div class="enlaces-footer">
       <ul>
         <li>
