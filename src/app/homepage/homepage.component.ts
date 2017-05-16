@@ -16,7 +16,7 @@ export class HomepageComponent implements OnInit {
 	constructor(private tiendaService: TiendaService) { }
 
 	ngOnInit() {
-		let timer = Observable.timer(0, 5000);
+		let timer = Observable.timer(0, 50000000);
 		timer.subscribe(() => this.getLastProducts());
 		timer.subscribe(() => this.getMostSales());
 	}
