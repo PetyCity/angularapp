@@ -40,7 +40,7 @@
                     
                 </div>
                 <div class="col-4">
-                    <select class="form-control busqueda" (change)="getOrden($event)">
+                    <select class="form-control busqueda" >
                         <option id="todos">Todos</option>
                         <option id="false">Bloqueados</option>
                         <option id="true">Activos</option>
@@ -58,7 +58,6 @@
                         <th>Correo</th>
                         <th>Bloqueado</th>
                         <th>Rol</th>
-                        <th>Activo</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -85,12 +84,6 @@
                                 <option id="company" [selected]="user.rol == 'company'">Compañia</option>
                                 <option id="cyustomer" [selected]="user.rol == 'customer'">Cliente</option>
                                 <option id="cyustomer" [selected]="user.rol == 'company_customer'">Cliente Compañia</option>
-                            </select>
-                        </td>
-                        <td>
-                            <select class="form-control busqueda" >
-                                <option id="true" [selected]="user.active">True</option>
-                                <option id="false" [selected]="user.active == false">False</option>
                             </select>
                         </td>
                     </tr>

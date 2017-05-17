@@ -24,6 +24,7 @@ const routes: Routes = [
     { path: 'contact', component: ContactComponent },
     { path: 'products', component: TiendaComponent },
     { path: 'companies', component: CompaniesComponent },
+    { path: 'companies/:id', component: CompanyComponent },
     { path: 'products/new', component: ProductNewComponent },
     { path: 'products/:id', component: ProductComponent },
     { path: 'categories', component: CategoryComponent },

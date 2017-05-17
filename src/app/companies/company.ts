@@ -9,6 +9,8 @@ export class Company{
 		public user_id?: number,
 		public active?: boolean,
 		public image_company?: string,
+		public c_votes_like?: number,
+		public c_votes_dislike?: number,
 		public created_at?: any,
 		public updated_at?: any
 	) {}

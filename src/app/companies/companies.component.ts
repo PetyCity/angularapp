@@ -13,6 +13,7 @@ export class CompaniesComponent implements OnInit {
 	companies: Company[];
 
 
+
 	constructor(
 		private apiService: ApiService,
 		private router: Router) { }
@@ -25,8 +26,13 @@ export class CompaniesComponent implements OnInit {
 		this.apiService.getCompanies().subscribe(companies => this.companies = companies);
 	}
 
-	goToCompany(){
-		
+	goToCompany(company: Company){
+		let companyLink = ['/companies', company.id];
+		this.router.navigate(companyLink);
+	}
+
+	likes(event){
+		console.log(this.companies);
 	}
 
 }

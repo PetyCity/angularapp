@@ -38,10 +38,13 @@ export class TiendaComponent implements OnInit {
 		this.orden = "";
 		this.parametro = "name_product";
 
+
+
 	}
 
 	getProducts(){
 		this.tiendaService.getProducts().subscribe(products => this.products = products);
+		console.log(this.products);
 	}
 	
 
@@ -87,13 +90,11 @@ export class TiendaComponent implements OnInit {
 	}
 
 	getOrden(event){
-		console.log(event.target.options[event.target.options.selectedIndex].id);
 		this.orden = event.target.options[event.target.options.selectedIndex].id;
 		this.getProductosFiltro();
 	}
 
 	getProductosFiltro(){
-		console.log(this.idCategory, this.palabra, this.orden, this.parametro);
 		this.apiService.getProductosFiltro(this.idCategory, this.palabra, this.orden, this.parametro).subscribe(products => this.products = products);
 	}
 }

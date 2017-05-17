@@ -10,13 +10,16 @@ import { User } from './users/user';
 
 @Injectable()
 export class ApiService {
+	//GET
 	private publicationsUrl = 'http://localhost:3000/api/v1/publications';
 	private categoriesUrl = 'http://localhost:3000/api/v1/categories';
 	private companiesUrl = 'http://localhost:3000/api/v1/companies';
-	private productSearchUrl = 'http://localhost:3000/api/v1/products/search?q='
-	private productosOrdenUrl = 'http://localhost:3000/api/v1/products/search?q='
-	private productosFiltro = 'http://localhost:3000/api/v1/products/search?'
-	private usersAdmin = 'http://localhost:3000/api/v1/admin/users/2/users/search?'
+	private productSearchUrl = 'http://localhost:3000/api/v1/products/search?q=';
+	private productosOrdenUrl = 'http://localhost:3000/api/v1/products/search?q=';
+	private productosFiltro = 'http://localhost:3000/api/v1/products/search?';
+	private usersAdmin = 'http://localhost:3000/api/v1/admin/users/2/users/search?';
+
+	//PATCH
 
 	constructor(private http: Http) {}
 
@@ -87,4 +90,9 @@ export class ApiService {
 		console.log(url);
 		return this.http.get(url).map((response: Response) => <User[]>response.json().users);
 	}
+
+	getCompany(id: number){
+		return this.http.get(this.companiesUrl + "/" + id + '.json');
+	}
+
 }

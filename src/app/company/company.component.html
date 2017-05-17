@@ -1,31 +1,40 @@
-<div class="barra-titulo">
-	COMPAÑIA
+<div class="row" *ngIf="company">
+    <div class="col-md-7">
+        <a href="#">
+            <img class="img-responsive" src="{{company.company.image_company.url}}" alt="">
+        </a>
+    </div>
+    <div class="col-md-5">
+        <h3>{{ company.company.name_comp }}</h3>
+        <h4>{{company.company.city}}</h4>
+        <a class="btn" ><span class="glyphicon glyphicon-hand-right badge" aria-hidden="true"> {{company.company.c_votes_like}}</span></a>
+        <a class="btn" ><span class="glyphicon glyphicon-thumbs-down badge" aria-hidden="true"> {{company.company.c_votes_dislike}}</span></a>
+        <hr>
+        <p><strong>Nit:</strong> {{company.company.nit}}</p>
+        <p><strong>Direccion:</strong> {{company.company.address}}</p>
+        <p><strong>Telefono:</strong> {{company.company.phone}}</p>
+    </div>
+
+    <div class="barra-titulo barra-verde">
+        Productos
+    </div>
+
+    <div class="caja-producto" *ngFor="let product of company.company.products">
+      <div class="img-producto">
+        <img src="images/producto4.jpg" />
+      </div>
+      <div class="txt-producto">
+        <h2> {{product.name_product}} </h2>
+        <p> {{product.description}} </p>
+        <br>
+        <span class="precio-home"> ${{product.value}} </span>
+      </div>
+      <a class="link-añadir" href="#">
+        <div class="btn-añadir">
+        añadir al carro
+        </div>
+      </a>
+    </div>
+
+
 </div>
-
-<div class="breadcrumbs">
-	Home/compañia
-</div>
-<div class="container" >
-
-	<div class="row">
-			<div class="row" >
-				<div class="col-9" >
-					<u>Compañias</u>
-				</div>
-
-
-				<div class="row">
-					<div class="pagination"><pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls></div>
-				</div>
-
-			</div>
-
-
-		</div>
-	</div>
-
-		
-
-
-
-<div class="pagination"><pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls></div>

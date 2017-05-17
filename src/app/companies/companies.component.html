@@ -7,7 +7,12 @@
         <div class="row">
             
             <div class="col-lg-4 col-sm-6 text-center" *ngFor="let company of companies | paginate: { itemsPerPage: 9, currentPage: p }">
-                <img class="img-circle img-responsive img-center" src="http://companiaslimitadasyanonimas.files.wordpress.com/2011/12/negocios03.png?w=300&h=194" alt="">
+                <img class="img-circle img-responsive img-center" src="{{company.image_company.url}}" alt="">
+
+                <a class="btn" (click)="likes($event)"><span class="glyphicon glyphicon-hand-right badge" aria-hidden="true"> {{company.c_votes_like}}</span></a>
+                <a class="btn" (click)="likes($event)"><span class="glyphicon glyphicon-thumbs-down badge" aria-hidden="true"> {{company.c_votes_dislike}}</span></a>
+
+
                 <h3>{{company.name_comp}}
                 </h3>
                 <h5>Direccion: {{company.address}}</h5>
