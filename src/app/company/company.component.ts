@@ -14,7 +14,7 @@ import { ApiService } from 'app/api.service';
 export class CompanyComponent implements OnInit {
 	id: number;
   	routeId: any;
-
+  	model = new Company();
 
 	constructor(private http: Http,
 	    private route: ActivatedRoute,
@@ -36,5 +36,7 @@ export class CompanyComponent implements OnInit {
 	    console.log(this.company);
 	}	
 	
+
+
 
 }
