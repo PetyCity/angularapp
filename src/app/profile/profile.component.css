@@ -1,0 +1,67 @@
+.banner-users {
+    background-image: url(/images/banner-user.jpg);
+    background-size: cover;
+    padding: 0px;
+    height: 250px;
+}
+.tit-banner-company {
+    font-size: 48px;
+    color: #fff;
+    text-shadow: 0 0 10px #000;
+    padding-top: 100px;
+    padding-left: 15%;
+    font-family: sans-serif;
+}
+.img-profile img {
+    width: 80%;
+    border-radius: 50%;
+    border: 8px #ccc solid;
+}
+.btn-menu-perfil {
+    width: 80%;
+    line-height: 35px;
+    text-align: center;
+    margin: 25px auto 10px auto;
+    border-radius: 5px;
+}
+.menu-profile a {
+    text-decoration: none;
+}
+.tit-profile {
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+.info-profile {
+    box-shadow: 0 0 10px #ccc;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-size: 15px;
+}
+.profile-right {
+    background: #fff;
+    padding: 35px;
+}
+.img-profile {
+    text-align: center;
+}
+.contenedor-detalles {
+    float: left;
+}
+.detalles-producto {
+    width: 90%;
+    margin: 0px auto 25px;
+    text-align: center;
+}
+.detalles-producto img {
+    width: 60%;
+    margin-top: 15px;
+}
+.detalles-nombre {
+    margin-top: 10px;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+a.enlace-perfil .btn-añadir {
+    background: #c13f28;
+    cursor: pointer;
+}

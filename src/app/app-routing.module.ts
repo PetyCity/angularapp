@@ -36,9 +36,19 @@ import { LoginFormComponent } from './authentication/loginform.component';
 
 import { RegisterFormComponent } from './authentication/loginregister.component';
 
+import { ProfileComponent } from "./profile/profile.component";
 
+import { ProfileProductsComponent} from "./profile/profile-products.component";
 
+import { ProfileProductsLikesComponent} from "./profile/profile-products-likes.component";
 
+import { ProfileProductsCommentsComponent} from "./profile/profile-products-comment.component";
+
+import { ProfileMyPublicationsComponent } from "./profile/profile-mypublications.component";
+
+import { ProfilePublicationsLikesComponent } from './profile/profile-publications-likes.component';
+
+import { ProfilePublicationsCommentsComponent } from './profile/profile-publications-comments.component';
 
 const routes: Routes = [
 
@@ -71,6 +81,16 @@ const routes: Routes = [
     { path: 'blog/:id', component: BlogComponent },
 
      { path: 'login', component: LoginFormComponent },
+
+     { path: 'profile', component: ProfileComponent},
+     { path: 'profile/products', component: ProfileProductsComponent},
+     { path: 'profile/products/likes', component: ProfileProductsLikesComponent},
+     { path: 'profile/products/comments', component: ProfileProductsCommentsComponent},
+     { path: 'profile/publications', component: ProfileMyPublicationsComponent},
+     { path: 'profile/publications/likes', component: ProfilePublicationsLikesComponent},
+     { path: 'profile/publications/comments', component: ProfilePublicationsCommentsComponent},
+     
+     
 
 ]
 

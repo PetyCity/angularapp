@@ -18,6 +18,9 @@ export class ApiService {
 	private productosOrdenUrl = 'http://localhost:3000/api/v1/products/search?q=';
 	private productosFiltro = 'http://localhost:3000/api/v1/products/search?';
 	private usersAdmin = 'http://localhost:3000/api/v1/admin/users/2/users/search?';
+	private perfilUrl = 'http://localhost:3000/api/v1/users';
+	private productPerfilUrl = 'http://localhost:3000/api/v1/company/users';
+	private myPerfilUrl = 'http://localhost:3000//api/v1/costum/users';
 
 	//PATCH
 
@@ -94,5 +97,37 @@ export class ApiService {
 	getCompany(id: number){
 		return this.http.get(this.companiesUrl + "/" + id + '.json');
 	}
+
+	
+
+	//GET:  Todos los productos del perfil asociado | ruta: productPerfilUrl
+	getProductsPerfil(id: number): Observable<Product[]> {
+		console.log("id perfil: " + id);
+		return this.http.get(this.productPerfilUrl+"/"+id+"/products").map((response: Response) => <Product[]>response.json().products)
+	}
+
+	//GET:  Todos los productos del perfil asociado | ruta: productPerfilUrl
+	getProductsPerfilVotes(id: number): Observable<Product[]> {
+		console.log("id perfil: " + id);
+		return this.http.get(this.productPerfilUrl+"/"+id+"/products").map((response: Response) => <Product[]>response.json().products)
+	}
+
+	//GET:  Todos los productos del perfil asociado | ruta: productPerfilUrl
+	getProductsPerfilComments(id: number): Observable<Product[]> {
+		console.log("id perfil: " + id);
+		return this.http.get(this.productPerfilUrl+"/"+id+"/products").map((response: Response) => <Product[]>response.json().products)
+	}
+
+	//GET: Un solo producto del perfil asociado | ruta: productPerfilUrl
+	getProduct(id: number){
+		return this.http.get(this.productPerfilUrl + "/" + id + '.json');
+	}
+
+	//GET:  Todas las publicaciones del perfil asociado | ruta base: myPerfilUrl
+	getPublicationsPerfil(id: number): Observable<Product[]> {
+		console.log("id perfil: " + id);
+		return this.http.get(this.myPerfilUrl+"/"+id+"/my_publications").map((response: Response) => <Product[]>response.json().products)
+	}
+
 
 }

@@ -1,0 +1,53 @@
+<div *ngIf="(authTokenService.currentUserData)" class="col l8 s12" >
+  <div class="banner-users">
+  <div class="tit-banner-company">
+    Usuarios
+  </div>
+</div>
+<div class="breadcrumbs">
+  Home / Usuarios / {{authTokenService.currentUserData.name_user}}
+</div>
+<div class="container-profile col-md-12">
+    <div class="profile-left col-md-4">
+      <div class="img-profile">
+        <img src="{{authTokenService.currentUserData.image.url}}" alt="perfil de Usuario" />
+      </div>
+      <div class="menu-profile">
+        <a (click)="profile">
+          <div class="btn-success btn-menu-perfil"> Editar perfil </div>
+        </a>
+        <a (click)="goToMisProductos()">
+          <div class="btn-success btn-menu-perfil"> Ver mis productos </div>
+        </a>
+        <a (click)="goToMisLikes()">
+          <div class="btn-success btn-menu-perfil"> Ver productos que me han gustado </div>
+        </a>
+        <a (click)="goToMisComments()">
+          <div class="btn-success btn-menu-perfil"> Ver productos que he comentado </div>
+        </a>
+        <a (click)="goToMisBlogs()">
+          <div class="btn-success btn-menu-perfil"> Ver mis publicaciones </div>
+        </a>
+        <a (click)="goToMisBlogsLikes()">
+          <div class="btn-success btn-menu-perfil"> Ver publicaciones que me gustaron </div>
+        </a>
+        <a (click)="goToMisBlogsComments()">
+          <div class="btn-success btn-menu-perfil"> Ver publicaciones que he comentado </div>
+        </a>
+      </div>
+    </div>
+    <div class="profile-right col-md-8">
+      <div class="tit-profile">
+        Perfil público de {{authTokenService.currentUserData.name_user}}
+      </div>
+      <div class="info-profile">
+        <h4> información de contacto: </h4><br>
+        <strong>Correo electrónico: </strong>{{authTokenService.currentUserData.email}} <br>
+      </div>
+    </div>
+</div>
+</div>
+
+<div *ngIf="!(authTokenService.currentUserData)" class="col l8 s12" >
+  <app-login-form> </app-login-form> 
+</div>

@@ -28,6 +28,14 @@ import { CompanyComponent } from './company/company.component';
 import { UsersComponent } from './users/users.component';
 import { UsersbyidComponent } from './usersbyid/usersbyid.component';
 import { CompaniesComponent } from './companies/companies.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ProfileProductsComponent } from './profile/profile-products.component';
+import { ProfileProductsLikesComponent } from './profile/profile-products-likes.component';
+import { ProfileProductsCommentsComponent } from './profile/profile-products-comment.component';
+import { ProfileMyPublicationsComponent } from "./profile/profile-mypublications.component";
+import { ProfilePublicationsLikesComponent } from './profile/profile-publications-likes.component';
+import { ProfilePublicationsCommentsComponent } from './profile/profile-publications-comments.component';
+
 
 @NgModule({
   declarations: [
@@ -46,6 +54,13 @@ import { CompaniesComponent } from './companies/companies.component';
     CompanyComponent,
     CompaniesComponent,
     LoginFormComponent,
+    ProfileComponent,
+    ProfileProductsComponent,
+    ProfileProductsLikesComponent,
+    ProfileProductsCommentsComponent,
+    ProfileMyPublicationsComponent,
+    ProfilePublicationsLikesComponent,
+    ProfilePublicationsCommentsComponent,
   ],
   imports: [
     BrowserModule,

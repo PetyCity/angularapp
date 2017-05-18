@@ -1,0 +1,36 @@
+<div *ngIf="(authTokenService.currentUserData)" class="col l8 s12" >
+  <div class="banner-users">
+  <div class="tit-banner-company">
+    Productos Usuarios
+  </div>
+</div>
+<div class="breadcrumbs">
+  Home / Usuarios / {{authTokenService.currentUserData.name_user}}
+</div>
+<div class="pagination"><pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls></div>
+	
+  <div class="container-profile col-md-12">
+  		
+   <div class="col-lg-4 col-sm-6 text-center" *ngFor="let product of products | paginate: { itemsPerPage: 9, currentPage: p }">
+      <img class="img-circle img-responsive img-center img" src="images/producto1.jpg" alt="">
+      <p>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </p>
+      <h3> {{product.name_product}} 
+      </h3>
+      <p class="product-valor"> ${{product.value}} </p>
+      
+      <a  (click)="goToProduct(product)">
+      <button type="button" class="btn btn-primary btn-añadir">Ver Producto</button>
+    </a>
+      <hr>
+   </div>
+   <div class="clear"></div>
+   <div class="pagination"><pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls></div>
+  </div>
+  		
+</div>

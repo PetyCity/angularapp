@@ -34,7 +34,7 @@ export class LoginFormComponent implements OnInit {
           console.log('auth response body:', res.json()); //log the response body to show the user 
         
             this.onFormResult.emit({signedIn: true, res});
-            this.router.navigate(['/home']);
+            this.router.navigate(['/profile']);
           }
         },
         err => {
@@ -45,7 +45,9 @@ export class LoginFormComponent implements OnInit {
 
   }
   logOut(){
-    this.authService.logOutUser().subscribe(() => this.router.navigate(['/']));
+     setTimeout(() => {
+       this.authService.logOutUser().subscribe(() => this.router.navigate(['/']));
+    }, 1000);
   }
 
 }

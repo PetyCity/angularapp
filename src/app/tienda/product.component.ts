@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { Product } from './tienda';
