@@ -24,6 +24,10 @@ import { PublicationService } from './publication/publication.service';
 import { LoginFormComponent } from './authentication/loginform.component';
 import { RegisterFormComponent } from './authentication/loginregister.component';
 import { AuthService } from "./auth.service";
+import { CompanyComponent } from './company/company.component';
+import { UsersComponent } from './users/users.component';
+import { UsersbyidComponent } from './usersbyid/usersbyid.component';
+import { CompaniesComponent } from './companies/companies.component';
 
 @NgModule({
   declarations: [
@@ -39,8 +43,6 @@ import { AuthService } from "./auth.service";
     CategoryComponent,
     CategorybyidComponent,
     PublicationComponent,
-    LoginFormComponent,
-    RegisterFormComponent,
   ],
   imports: [
     BrowserModule,

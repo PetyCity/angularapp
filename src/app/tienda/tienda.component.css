@@ -10,11 +10,17 @@
     font-family: cursive;
 }
 .contenedor-producto{
+    width: 90%;
+    padding: 10px;
+    float: left;
     text-align: center;
+    box-shadow: 0 0 10px 5px #DDDDDD;
+    margin: 10px 0% 20px 4%;
+    min-width: 200px;
 }
 
 .categoria-link{
-    color: #337ab7;
+    color: #4B4B4B;
 }
 
 .ver-producto{
@@ -27,7 +33,6 @@
     margin-top: 5px;
     max-width: 150px;
     overflow: hidden;
-    padding-left: 45%;
 }
 .product-letra-mas-vendidos{
     font-size: 15px;
@@ -40,8 +45,7 @@
 .product-valor{
     font-size: 20px;
     color: #3FD2BF;
-    margin-top: 5px;
-    padding-left: 45%;
+    
 }
 
 .product-valor-mas-vendidos{
@@ -108,16 +112,30 @@ a.link-añadir {
 }
 .btn-añadir {
     background: #3F3F3F;
-    padding: 5px 10px;
-    border-radius: 5px;
-    max-width: 130px;
-    margin: 0 auto;
-    color: #fff;
-    margin-top: 36px;
-    cursor: pointer;
+    
 }
 .img{
-    width: 80%;
+    width: 55%;
+    
+}
+.imgMasVendidos{
+    width: 107%;
+    margin-left: 15%;
+    
+}   
+
+.busqueda{
+    height: 31px !important;
 }
 
+.producto-mas-vendido{
+    width: 60%;
+    margin-left: 0%;
+}
+a{
+   cursor: pointer; 
+}
 
+.todos-productos{
+    margin-top: 5%;
+}

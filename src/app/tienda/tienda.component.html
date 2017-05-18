@@ -5,7 +5,6 @@
 <div class="breadcrumbs">
 	Home/tienda
 </div>
-
 <div class="container" >
 
 	<div class="row">
@@ -15,66 +14,132 @@
 					<u>Tienda de Productos</u>
 				</div>
 
-				<div class="pagination"><pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls></div>
-				
 			</div>
-			<div class="row">
-				<div class=" col-12" >
-					<div class="row" >
-						<!--<div class="container-prod" *ngFor="let product of products">-->
-							<div class="col-4 contenedor-producto" *ngFor="let product of products | paginate: { itemsPerPage: 9, currentPage: p }">
-								<div class="row detalles-producto">
-									<div class="col-xs-6 col-md-3">
-										<a class="thumbnail producto" (click)="goToProduct(product)">
-										  <img src="/images/producto1.jpg" >
-										  	<div class="row product-letra">
-												{{product.name_product}}
-											</div>
-											<div class="row product-valor">
-												${{product.value}}
-											</div>
-										</a>
-									</div>
-									
-								</div>
-								
-							</div>
-						<!--</div>-->
+			<div class="row ">
+				<div class="col-3">
+					<div class=row>
+						<select class="form-control busqueda" (change)="getProductsByCategory($event)">
+							<option id="0">Todos los productos</option>
+						    <option *ngFor="let category of categories" id="{{category.id}}">{{category.name_category}}</option>
+						</select>
 					</div>
+					
+				</div>
+				<div class="col-3">
+					<form (ngSubmit)="getSearchProducts($event)">
+						<div class="input-group">
+					      <input type="text" class="form-control" placeholder="Producto">
+					      <span class="input-group-btn">
+					        <button class="btn btn-default" type="submit" >Buscar</button>
+					      </span>
+					    </div>
+					</form>
+				</div>
+				<div class="col-3">
+					<div >
+						<select class="form-control busqueda" (change)="getOrden($event)">
+							<option id="">Ascendentemente</option>
+							<option id="-">Descendentemente</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-3">
+					<select class="form-control busqueda" (change)="getparametroBusqueda($event)">
+						    <option id="name_product" >Nombre</option>
+						    <option id="value" >Valor</option>
+					</select>
+				</div>
+			</div>
+			
+			<div class="row todos-productos">
+				<div class="row">
+					<div class="pagination"><pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls></div>
+				</div>
+				<div class=" col-12" >
+					<!-- Page Content -->
+					    <!-- Team Members Row -->
+					    <div class="row">
+
+					        <div class="col-lg-4 col-sm-6 text-center" *ngFor="let product of products | paginate: { itemsPerPage: 9, currentPage: p }">
+					            <img class="img-circle img-responsive img-center img" src="images/producto1.jpg" alt="">
+					            <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </p>
+					            <h3> {{product.name_product}} 
+					            </h3>
+					            <p class="product-valor"> ${{product.value}} </p>
+					            
+					            <a  (click)="goToProduct(product)">
+							        <button type="button" class="btn btn-primary btn-añadir">Ver Producto</button>
+							     </a>
+					            <hr>
+					        </div>
+
+					        
+					    </div>
+
+					    <hr>
+
+					    <!-- Footer -->
+					<!-- /.container -->
+
+					<!-- jQuery -->
+					<script src="js/jquery.js"></script>
+
+					<!-- Bootstrap Core JavaScript -->
+					<script src="js/bootstrap.min.js"></script>
+					
+				</div>
+				<div class="row">
+					<div class="pagination"><pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls></div>
 				</div>
 			</div>
 		</div>
 			
 
 		<div class=" col-3" >
-			<span class="titulos-productos">Categoria de Productos</span>
-			<div class="opciones-productos" *ngFor="let category of categories">
-				
-				<ul class="nav nav-pills">
-					<li role="presentation" class="categoria-link"><a (click)="goToCategory(category)">{{category.name_category}}</a></li>
-				</ul>
-				
+			<span class="titulos-productos"><a routerLink='/categories'>Categoria de Productos</a></span>
+
+			<div class="row">
+				<div class="opciones-productos col-6" *ngFor="let category of categories">
+			
+					<ul class="nav nav-pills">
+						<li role="presentation" class="categoria-link"><a (click)="goToCategory(category)">{{category.name_category}}</a></li>
+					</ul>
+			
+				</div>
 			</div>
+						
 
 			<span class="titulos-productos">Productos Mas Vendidos</span>
 
 			<div class="opciones-productos" >
 
-				<div class="row" *ngFor="let product of productsMostSales; let i = index">
+				<div class="row producto-mas-vendido" *ngFor="let product of productsMostSales; let i = index">
 					<div ng-if="i < 3">
 						<a class="thumbnail" (click)="goToProduct(product)">
 							<div class="row">
-							<div class="col-5">
-						  		<img src="/images/producto4.jpg" class="img">
-							</div>
-							<div class="col-7">
-								<div class="row product-letra-mas-vendidos">
-							  		{{product.name_product}}
-							  	</div>
-							  	<div class="row product-valor-mas-vendidos">
-							  		${{product.value}}
-							  	</div>
+								<div class="col-5">
+							  		<img src="/images/producto4.jpg" class="imgMasVendidos">
 								</div>
+							<div class="col-7">
+								<div class="row">
+									<div class="col-12 product-letra-mas-vendidos">
+										{{product.name_product}}
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-12 product-valor-mas-vendidos">
+										${{product.value}}
+									</div>
+								</div>
+								
+							  		
+							</div>
 							</div>
 						</a>
 					</div>
@@ -88,13 +153,13 @@
 
 	
 
-		</div>
-		</div>
+			</div>
+	</div>
 
 		
 
 
 
-<div class="pagination"><pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls></div>
+
 
 

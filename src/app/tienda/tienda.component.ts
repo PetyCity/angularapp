@@ -16,6 +16,11 @@ export class TiendaComponent implements OnInit {
   	products: Product[];
   	productsMostSales: Product[];
   	categories: Category[];
+  	idCategory: number;
+  	palabra: string;
+  	orden: string;
+  	parametro: string;
+  	
 
 	constructor(
 		private tiendaService: TiendaService,
@@ -24,15 +29,25 @@ export class TiendaComponent implements OnInit {
 	) { }
 
 	ngOnInit() {
-		let timer = Observable.timer(0, 50000);
-		timer.subscribe(() => this.getProducts());
-		timer.subscribe(() => this.getMostSales());
-		timer.subscribe(() => this.getCategories());
+		
+		this.getProducts();
+		this.getMostSales();
+		this.getCategories();
+
+		this.idCategory = 0;
+		this.orden = "";
+		this.parametro = "name_product";
+
+
+
 	}
 
 	getProducts(){
 		this.tiendaService.getProducts().subscribe(products => this.products = products);
+		console.log(this.products);
 	}
+	
+
 
 	goToProduct (product: Product): void{
 		let productLink = ['/products', product.id];
@@ -53,5 +68,33 @@ export class TiendaComponent implements OnInit {
 		this.router.navigate(categoryLink);
 	}
 
-	
+	getProductsByCategory(event) {
+		console.log(event.target.options[event.target.options.selectedIndex].id);
+		this.idCategory = event.target.options[event.target.options.selectedIndex].id;
+		this.getProductosFiltro();
+	}
+
+	getparametroBusqueda(event){
+		this.parametro = event.target.options[event.target.options.selectedIndex].id;
+		this.getProductosFiltro();
+	}
+
+	getSearchProducts(event){
+
+		let palabra = event.target.children[0].children[0].value;
+		console.log(palabra);
+		
+			this.palabra = event.target.children[0].children[0].value;
+			this.getProductosFiltro();
+		
+	}
+
+	getOrden(event){
+		this.orden = event.target.options[event.target.options.selectedIndex].id;
+		this.getProductosFiltro();
+	}
+
+	getProductosFiltro(){
+		this.apiService.getProductosFiltro(this.idCategory, this.palabra, this.orden, this.parametro).subscribe(products => this.products = products);
+	}
 }
