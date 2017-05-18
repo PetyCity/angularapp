@@ -44,7 +44,8 @@ import { CompaniesComponent } from './companies/companies.component';
     CategorybyidComponent,
     PublicationComponent,
     CompaniesComponent,
-    CompanyComponent 
+    CompanyComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
