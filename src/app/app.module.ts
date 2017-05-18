@@ -43,6 +43,8 @@ import { CompaniesComponent } from './companies/companies.component';
     CategoryComponent,
     CategorybyidComponent,
     PublicationComponent,
+    CompaniesComponent,
+    CompanyComponent 
   ],
   imports: [
     BrowserModule,
