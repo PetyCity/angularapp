@@ -95,7 +95,7 @@ export class TiendaComponent implements OnInit {
 	}
 
 	getProductosFiltro(){
-		console.log(this.products);
+		//console.log(this.productsMostSales);
 		this.apiService.getProductosFiltro(this.idCategory, this.palabra, this.orden, this.parametro).subscribe(products => this.products = products);
 	}
 }

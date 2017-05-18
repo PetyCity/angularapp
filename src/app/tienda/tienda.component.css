@@ -139,3 +139,11 @@ a{
 .todos-productos{
     margin-top: 5%;
 }
+
+.votes{
+    
+}
+
+.star:hover{
+    color: darkblue;
+}

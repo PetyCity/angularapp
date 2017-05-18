@@ -19,14 +19,19 @@ export class HomepageComponent implements OnInit {
 		let timer = Observable.timer(0, 50000000);
 		timer.subscribe(() => this.getLastProducts());
 		timer.subscribe(() => this.getMostSales());
+
+		
 	}
 
 	getLastProducts(){
 		this.tiendaService.getLastProducts().subscribe(products => this.lastProducts = products);
+		console.log(this.lastProducts);
+		
 	}
 
 	getMostSales(){
 		this.tiendaService.getMostSales().subscribe(products => this.productsMostSales = products);
+		console.log(this.productsMostSales);
 	}
 
 }

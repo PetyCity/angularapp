@@ -62,12 +62,22 @@
 
 					        <div class="col-lg-4 col-sm-6 text-center" *ngFor="let product of products | paginate: { itemsPerPage: 9, currentPage: p }">
 					            <img class="img-circle img-responsive img-center img" src="{{product.images[0].name_image.url}}" alt="">
+					            <h6>Puntaje</h6>
 					            <p>
                                     <span class="glyphicon glyphicon-star"></span>
                                     <span class="glyphicon glyphicon-star"></span>
                                     <span class="glyphicon glyphicon-star"></span>
                                     <span class="glyphicon glyphicon-star"></span>
                                     <span class="glyphicon glyphicon-star-empty"></span>
+                                </p>
+                                <h6>Califique Este Producto</h6>
+                                <p>
+                                    <a class="btn votes"><span class="glyphicon glyphicon-star star"></span></a>
+                                    <a class="btn votes"><span class="glyphicon glyphicon-star star"></span></a>
+                                    <a class="btn votes"><span class="glyphicon glyphicon-star star"></span></a>
+                                    <a class="btn votes"><span class="glyphicon glyphicon-star star"></span></a>
+                                    <a class="btn votes"><span class="glyphicon glyphicon-star-empty star"></span></a>
+                                    
                                 </p>
 					            <h3> {{product.name_product}} 
 					            </h3>
