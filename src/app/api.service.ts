@@ -102,20 +102,17 @@ export class ApiService {
 
 	//GET:  Todos los productos del perfil asociado | ruta: productPerfilUrl
 	getProductsPerfil(id: number): Observable<Product[]> {
-		console.log("id perfil: " + id);
-		return this.http.get(this.productPerfilUrl+"/"+id+"/products").map((response: Response) => <Product[]>response.json().products)
+		return this.http.get(this.myPerfilUrl+"/"+id+"/productsbought").map((response: Response) => <Product[]>response.json().products)
 	}
 
 	//GET:  Todos los productos del perfil asociado | ruta: productPerfilUrl
 	getProductsPerfilVotes(id: number): Observable<Product[]> {
-		console.log("id perfil: " + id);
-		return this.http.get(this.productPerfilUrl+"/"+id+"/products").map((response: Response) => <Product[]>response.json().products)
+		return this.http.get(this.myPerfilUrl+"/"+id+"/product_voted").map((response: Response) => <Product[]>response.json().products)
 	}
 
 	//GET:  Todos los productos del perfil asociado | ruta: productPerfilUrl
 	getProductsPerfilComments(id: number): Observable<Product[]> {
-		console.log("id perfil: " + id);
-		return this.http.get(this.productPerfilUrl+"/"+id+"/products").map((response: Response) => <Product[]>response.json().products)
+		return this.http.get(this.myPerfilUrl+"/"+id+"/product_commented").map((response: Response) => <Product[]>response.json().products)
 	}
 
 	//GET: Un solo producto del perfil asociado | ruta: productPerfilUrl
@@ -125,7 +122,6 @@ export class ApiService {
 
 	//GET:  Todas las publicaciones del perfil asociado | ruta base: myPerfilUrl
 	getPublicationsPerfil(id: number): Observable<Product[]> {
-		console.log("id perfil: " + id);
 		return this.http.get(this.myPerfilUrl+"/"+id+"/my_publications").map((response: Response) => <Product[]>response.json().products)
 	}
 

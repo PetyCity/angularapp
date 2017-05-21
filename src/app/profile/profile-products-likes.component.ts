@@ -27,14 +27,11 @@ export class ProfileProductsLikesComponent implements OnInit {
 
   ngOnInit() {
     let idperfil = this.authTokenService.currentUserData.id;
-   
-    console.log("id perfil: " + idperfil);
+    this.products = ["1"];
     this.getProducts(idperfil);
   }
   getProducts(id: number){
-    console.log("id perfil: ");
 		this.apiService.getProductsPerfilVotes(id).subscribe(products => this.products = products);
-		console.log(this.products);
 	}
 
 }

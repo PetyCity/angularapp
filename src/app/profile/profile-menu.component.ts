@@ -7,11 +7,11 @@ import { ApiService } from 'app/api.service';
 import { Product } from '../tienda/tienda';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
+  selector: 'app-menu-profile',
+  templateUrl: './profile-menu.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class ProfileMenuComponent implements OnInit {
 
   productos: Product[];
   constructor(protected authTokenService:Angular2TokenService,
@@ -23,26 +23,32 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
   }
   goToMisProductos(){
+    let idperfil = this.authTokenService.currentUserData.id;
 		let idperfilLink = ['/profile/products'];
 		this.router.navigate(idperfilLink);
 	}
   goToMisLikes(){
+    let idperfil = this.authTokenService.currentUserData.id;
 		let idperfilLink = ['/profile/products/likes'];
 		this.router.navigate(idperfilLink);
 	}
   goToMisComments(){
+    let idperfil = this.authTokenService.currentUserData.id;
 		let idperfilLink = ['/profile/products/comments'];
 		this.router.navigate(idperfilLink);
 	}
   goToMisBlogs(){
+    let idperfil = this.authTokenService.currentUserData.id;
 		let idperfilLink = ['/profile/publications'];
 		this.router.navigate(idperfilLink);
 	}
   goToMisBlogsLikes(){
+    let idperfil = this.authTokenService.currentUserData.id;
 		let idperfilLink = ['/profile/publications/likes'];
 		this.router.navigate(idperfilLink);
 	}
   goToMisBlogsComments(){
+    let idperfil = this.authTokenService.currentUserData.id;
 		let idperfilLink = ['/profile/publications/comments'];
 		this.router.navigate(idperfilLink);
 	}

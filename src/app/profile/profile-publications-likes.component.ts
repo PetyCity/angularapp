@@ -9,8 +9,8 @@ import { Publication } from '../publication/publication';
 import { PublicationService } from '../publication/publication.service';
 
 @Component({
-  selector: 'app-profile-mypublications',
-  templateUrl: './profile-mypublications.component.html',
+  selector: 'app-profile-mypublications-liked',
+  templateUrl: './profile-publications-likes.component.html',
   styleUrls: ['./profile.component.css']
 })
 export class ProfilePublicationsLikesComponent implements OnInit {
@@ -27,14 +27,11 @@ export class ProfilePublicationsLikesComponent implements OnInit {
 
   ngOnInit() {
     let idperfil = this.authTokenService.currentUserData.id;
-   
-    console.log("id perfil: " + idperfil);
+    this.publications = ["1"];
     this.getMyPublications(idperfil);
   }
   getMyPublications(id: number){
-    console.log("id perfil: ");
-		this.publicationService.getMyPublications(id).subscribe(publications => this.publications = publications);
-		console.log(this.publications);
+		this.publicationService.getVotedPublications(id).subscribe(publications => this.publications = publications);
 	}
 
 }

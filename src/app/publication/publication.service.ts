@@ -8,6 +8,7 @@ import { Publication } from './publication';
 export class PublicationService {
 	private publicationUrl = 'http://localhost:3000/api/v1/publications';
 	private newpublicationUrl = 'http://localhost:3000/api/v1/costum/users';
+	private mypublicationUrl = 'http://localhost:3000/api/v1/costum/users/6/publicatons_commented';
 
 	constructor(private http: Http) {}
 
@@ -29,4 +30,13 @@ export class PublicationService {
 	getMyPublications(id: number): Observable<Publication[]> {
 		return this.http.get(this.newpublicationUrl+"/"+id+"/publications").map((response: Response) => <Publication[]>response.json().publications)
 	}
+
+	getCommentedPublications(id: number): Observable<Publication[]> {
+		return this.http.get(this.newpublicationUrl+"/"+6+"/publicatons_commented").map((response: Response) => <Publication[]>response.json().publications)
+	}
+
+	getVotedPublications(id: number): Observable<Publication[]> {
+		return this.http.get(this.newpublicationUrl+"/"+id+"/publicatons_voted").map((response: Response) => <Publication[]>response.json().publications)
+	}
+	
 }

@@ -27,14 +27,11 @@ export class ProfileMyPublicationsComponent implements OnInit {
 
   ngOnInit() {
     let idperfil = this.authTokenService.currentUserData.id;
-   
-    console.log("id perfil: " + idperfil);
-    this.getMyPublications(idperfil);
+    this.publications = ["1"];
+    this.getCommentedPublications(idperfil);
   }
-  getMyPublications(id: number){
-    console.log("id perfil: ");
-		this.publicationService.getMyPublications(id).subscribe(publications => this.publications = publications);
-		console.log(this.publications);
+  getCommentedPublications(id: number){
+		this.publicationService.getCommentedPublications(id).subscribe(publications => this.publications = publications);
 	}
 
 }

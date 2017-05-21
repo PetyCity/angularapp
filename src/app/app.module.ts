@@ -35,6 +35,7 @@ import { ProfileProductsCommentsComponent } from './profile/profile-products-com
 import { ProfileMyPublicationsComponent } from "./profile/profile-mypublications.component";
 import { ProfilePublicationsLikesComponent } from './profile/profile-publications-likes.component';
 import { ProfilePublicationsCommentsComponent } from './profile/profile-publications-comments.component';
+import { ProfileMenuComponent } from './profile/profile-menu.component';
 
 
 @NgModule({
@@ -61,6 +62,7 @@ import { ProfilePublicationsCommentsComponent } from './profile/profile-publicat
     ProfileMyPublicationsComponent,
     ProfilePublicationsLikesComponent,
     ProfilePublicationsCommentsComponent,
+    ProfileMenuComponent,
   ],
   imports: [
     BrowserModule,
