@@ -16,7 +16,7 @@ import { BlogNewComponent } from './publication/blog-new.component';
 import { UsersComponent } from './users/users.component';
 import { CompaniesComponent } from './companies/companies.component';
 import { LoginFormComponent } from './authentication/loginform.component';
-import { RegisterFormComponent } from './authentication/loginregister.component';
+import { RegisterFormComponent } from './authentication/loginregister.component';import { AdminUserComponent } from './admin/adminUser.component';import { AdminCompanyComponent } from './admin/adminCompany.component';import { AdminProductComponent } from './admin/adminProducts.component';
 
 
 const routes: Routes = [
@@ -33,7 +33,7 @@ const routes: Routes = [
     { path: 'categories/:id', component: CategorybyidComponent },
     { path: 'blog', component: PublicationComponent },
     { path: 'blog/new', component: BlogNewComponent },
-    { path: 'blog/:id', component: BlogComponent },
+    { path: 'blog/:id', component: BlogComponent },    { path: 'admin-user', component: AdminUserComponent },    { path: 'admin-company', component: AdminCompanyComponent },    { path: 'admin-products', component: AdminProductComponent },
 ]
 
 @NgModule({

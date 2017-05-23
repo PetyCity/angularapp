@@ -28,6 +28,9 @@ import { CompanyComponent } from './company/company.component';
 import { UsersComponent } from './users/users.component';
 import { UsersbyidComponent } from './usersbyid/usersbyid.component';
 import { CompaniesComponent } from './companies/companies.component';
+import { AdminUserComponent } from './admin/adminUser.component';
+import { AdminCompanyComponent } from './admin/adminCompany.component';
+import { AdminProductComponent } from './admin/adminProducts.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +47,10 @@ import { CompaniesComponent } from './companies/companies.component';
     CategorybyidComponent,
     PublicationComponent,
     CompaniesComponent,
-    CompanyComponent 
+    CompanyComponent ,
+    AdminUserComponent,
+    AdminCompanyComponent,
+    AdminProductComponent
   ],
   imports: [
     BrowserModule,
