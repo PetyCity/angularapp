@@ -18,6 +18,9 @@ export class ApiService {
 	private productosOrdenUrl = 'http://localhost:3000/api/v1/products/search?q=';
 	private productosFiltro = 'http://localhost:3000/api/v1/products/search?';
 	private usersAdmin = 'http://localhost:3000/api/v1/admin/users/2/users/search?';
+	private votes = 'http://localhost:3000/api/v1/costum/users/';
+	private getVotes = 'http://localhost:3000/api/v1/costum/users/';
+	private stars = 'http://localhost:3000/api/v1/costum/users/';
 
 	//PATCH
 
@@ -73,7 +76,6 @@ export class ApiService {
 			url = url + urlPalabra + urlOrden + parametro;
 			
 		}
-		console.log(url);
 		return this.http.get(url).map((response: Response) => <Product[]>response.json().products);
 	}
 
@@ -87,12 +89,36 @@ export class ApiService {
 		} else {
 			url = this.usersAdmin + atributos;
 		}
-		console.log(url);
 		return this.http.get(url).map((response: Response) => <User[]>response.json().users);
 	}
 
 	getCompany(id: number){
 		return this.http.get(this.companiesUrl + "/" + id + '.json');
+	}
+	
+	getVote(userId, companyId){
+		let url = this.getVotes + userId + "/" + "companies" + "/" + companyId + "/" + "my_vote";
+		console.log(url);
+		return this.http.get(url).map((response: Response) => response.json().vote);
+		
+	}
+	sendVotes(userId, companyId, vote){
+		let url = this.votes  + userId + "/" + "companies" + "/" + companyId + "/" +  "votes";
+		let headers = new Headers({'Content-Type':'application/json'});
+		let options = new RequestOptions({headers: headers});
+		console.log(url);
+		return this.http.post(url, {"vote": vote},
+		options).map((res:Response) => res.json());
+		
+	}
+
+	sendStars(userId, productId, vote){
+		let url = this.votes  + userId + "/" + "products" + "/" + productId + "/" +  "votes";
+		let headers = new Headers({'Content-Type':'application/json'});
+		let options = new RequestOptions({headers: headers});
+		console.log(url);
+		return this.http.post(url, {"vote": vote},
+		options).map((res:Response) => res.json());
 	}
 
 }

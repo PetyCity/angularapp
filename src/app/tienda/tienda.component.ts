@@ -5,6 +5,8 @@ import { Product } from './tienda';
 import { Category } from 'app/category/category';
 import { TiendaService } from './tienda.service';
 import { ApiService } from 'app/api.service';
+import {Angular2TokenService} from "angular2-token";
+import {AuthService} from "app/auth.service";
 
 @Component({
   selector: 'app-tienda',
@@ -20,12 +22,15 @@ export class TiendaComponent implements OnInit {
   	palabra: string;
   	orden: string;
   	parametro: string;
+
   	
 
 	constructor(
 		private tiendaService: TiendaService,
 		private apiService: ApiService,
-		private router: Router
+		private router: Router,
+		private authService:AuthService, 
+    	protected authTokenService:Angular2TokenService
 	) { }
 
 	ngOnInit() {
@@ -44,7 +49,7 @@ export class TiendaComponent implements OnInit {
 
 	getProducts(){
 		this.tiendaService.getProducts().subscribe(products => this.products = products);
-		console.log(this.products);
+		
 	}
 	
 
@@ -80,7 +85,7 @@ export class TiendaComponent implements OnInit {
 	}
 
 	getSearchProducts(event){
-
+		console.log(this.products);
 		let palabra = event.target.children[0].children[0].value;
 		console.log(palabra);
 		
@@ -98,4 +103,20 @@ export class TiendaComponent implements OnInit {
 		console.log(this.products);
 		this.apiService.getProductosFiltro(this.idCategory, this.palabra, this.orden, this.parametro).subscribe(products => this.products = products);
 	}
+
+	sendStars(productId){
+		let userId = this.authTokenService.currentUserData.id;
+		let vote;
+
+
+
+		this.apiService.sendStars(userId, productId, vote)
+	      .subscribe(data => {return true},
+	      error=> {
+	        console.log("Error creando el nuevo Producto");
+	        return Observable.throw(error);
+	      });
+
+	}
+
 }
