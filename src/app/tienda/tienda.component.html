@@ -61,7 +61,10 @@
 					    <div class="row">
 
 					        <div class="col-lg-4 col-sm-6 text-center" *ngFor="let product of products | paginate: { itemsPerPage: 9, currentPage: p }">
-					            <img class="img-circle img-responsive img-center img" src="{{product.images[0].name_image.url}}" alt="">
+					            <div class="img-producto ">
+									<img *ngIf="!(product.images[0]?.name_image)" class="img-circle img-responsive img-center img" src="images/interrogacion.png" >
+									<img class="img-circle img-responsive img-center img"  *ngIf="(product.images[0]?.name_image)" src="{{product.images[0]?.name_image.url}}" />
+								</div>
 					            <p>
                                     <span class="glyphicon glyphicon-star"></span>
                                     <span class="glyphicon glyphicon-star"></span>
@@ -124,7 +127,7 @@
 						<a class="thumbnail" (click)="goToProduct(product)">
 							<div class="row">
 								<div class="col-5">
-							  		<img src="{{product.images[0].name_image.url}}" class="imgMasVendidos imgVendidos">
+							  		<img src="{{product.images[0]?.name_image.url}}" class="imgMasVendidos imgVendidos">
 								</div>
 							<div class="col-7">
 								<div class="row">

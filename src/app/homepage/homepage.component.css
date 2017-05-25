@@ -58,4 +58,9 @@
     width: 100%;
     max-width: 170px;
 }
-
+.txt-producto {
+    height: 150px;
+}
+.img-producto {
+    height: 160px;
+}

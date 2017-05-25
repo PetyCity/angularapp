@@ -115,4 +115,29 @@ export class ApiService {
 		
 	}
 
+	sendStars(userId, productId, vote){
+		let url = this.votes  + userId + "/" + "products" + "/" + productId + "/" +  "votes";
+		let headers = new Headers({'Content-Type':'application/json'});
+		let options = new RequestOptions({headers: headers});
+		console.log(url);
+		return this.http.post(url, {"vote": vote},
+		options).map((res:Response) => res.json());
+	}
+	
+	//GET:  Todos los productos del perfil asociado | ruta: productPerfilUrl
+	getProductsPerfil(id: number): Observable<Product[]> {
+		return this.http.get(this.myPerfilUrl+"/"+id+"/productsbought").map((response: Response) => <Product[]>response.json().products)
+	}
+
+	//GET:  Todos los productos del perfil asociado | ruta: productPerfilUrl
+	getProductsPerfilVotes(id: number): Observable<Product[]> {
+		return this.http.get(this.myPerfilUrl+"/"+id+"/product_voted").map((response: Response) => <Product[]>response.json().products)
+	}
+
+	//GET:  Todos los productos del perfil asociado | ruta: productPerfilUrl
+	getProductsPerfilComments(id: number): Observable<Product[]> {
+		return this.http.get(this.myPerfilUrl+"/"+id+"/product_commented").map((response: Response) => <Product[]>response.json().products)
+	}
+
+
 }
