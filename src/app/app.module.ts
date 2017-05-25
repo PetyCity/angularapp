@@ -58,10 +58,8 @@ import { AdminProductComponent } from './admin/adminProducts.component';
     CompanyComponent,
     CompaniesComponent,
     LoginFormComponent,
-=======
     CompaniesComponent,
-    CompanyComponent 
->>>>>>> Temporary merge branch 2
+    CompanyComponent,
   ],
   imports: [
     BrowserModule,
