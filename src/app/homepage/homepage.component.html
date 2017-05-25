@@ -52,7 +52,7 @@
   <div class="cont-productos prod-destacados">
 
     <div class="caja-producto" *ngFor="let product of productsMostSales">
-      <div class="img-producto">
+      <div class="img-producto imgHhome">
         <img src="{{product.images[0].name_image.url}}" />
       </div>
       <div class="txt-producto">
@@ -80,8 +80,8 @@
   <div class="cont-productos prod-recientes">
 
      <div class="caja-producto" *ngFor="let product of lastProducts">
-      <div class="img-producto">
-        <img src="{{product.images[0].name_image.url}}" />
+      <div class="img-producto ">
+        <img class="imgHome" src="{{product.images[0].name_image.url}}" />
       </div>
       <div class="txt-producto">
         <h2> {{product.name_product}} </h2>
