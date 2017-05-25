@@ -1,19 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
-import { Product } from './tienda';
+import { Product } from 'app/tienda/tienda';
 import { Category } from 'app/category/category';
-import { TiendaService } from './tienda.service';
+import { TiendaService } from 'app/tienda/tienda.service';
 import { ApiService } from 'app/api.service';
-import {Angular2TokenService} from "angular2-token";
-import {AuthService} from "app/auth.service";
-
 @Component({
-  selector: 'app-tienda',
-  templateUrl: './tienda.component.html',
-  styleUrls: ['./tienda.component.css']
+  selector: 'app-adminproduct',
+  templateUrl: './adminProducts.component.html',
+  styleUrls: ['./adminProducts.component.css']
 })
-export class TiendaComponent implements OnInit {
+
+export class AdminProductComponent implements OnInit {
 
   	products: Product[];
   	productsMostSales: Product[];
@@ -23,18 +21,15 @@ export class TiendaComponent implements OnInit {
   	orden: string;
   	parametro: string;
 
-  	
 
 	constructor(
 		private tiendaService: TiendaService,
 		private apiService: ApiService,
-		private router: Router,
-		private authService:AuthService, 
-    	protected authTokenService:Angular2TokenService
+		private router: Router
 	) { }
 
 	ngOnInit() {
-		
+
 		this.getProducts();
 		this.getMostSales();
 		this.getCategories();
@@ -49,9 +44,9 @@ export class TiendaComponent implements OnInit {
 
 	getProducts(){
 		this.tiendaService.getProducts().subscribe(products => this.products = products);
-		
+		console.log(this.products);
 	}
-	
+
 
 
 	goToProduct (product: Product): void{
@@ -85,13 +80,13 @@ export class TiendaComponent implements OnInit {
 	}
 
 	getSearchProducts(event){
-		console.log(this.products);
+
 		let palabra = event.target.children[0].children[0].value;
 		console.log(palabra);
-		
+
 			this.palabra = event.target.children[0].children[0].value;
 			this.getProductosFiltro();
-		
+
 	}
 
 	getOrden(event){
@@ -103,20 +98,4 @@ export class TiendaComponent implements OnInit {
 		console.log(this.products);
 		this.apiService.getProductosFiltro(this.idCategory, this.palabra, this.orden, this.parametro).subscribe(products => this.products = products);
 	}
-
-	sendStars(productId){
-		let userId = this.authTokenService.currentUserData.id;
-		let vote;
-
-
-
-		this.apiService.sendStars(userId, productId, vote)
-	      .subscribe(data => {return true},
-	      error=> {
-	        console.log("Error creando el nuevo Producto");
-	        return Observable.throw(error);
-	      });
-
-	}
-
 }

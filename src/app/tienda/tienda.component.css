@@ -139,3 +139,9 @@ a{
 .todos-productos{
     margin-top: 5%;
 }
+
+.imgVendidos{
+    width: 100%;
+    max-width: 170px;
+}
+

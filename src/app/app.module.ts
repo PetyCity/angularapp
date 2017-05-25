@@ -36,6 +36,9 @@ import { ProfileMyPublicationsComponent } from "./profile/profile-mypublications
 import { ProfilePublicationsLikesComponent } from './profile/profile-publications-likes.component';
 import { ProfilePublicationsCommentsComponent } from './profile/profile-publications-comments.component';
 import { ProfileMenuComponent } from './profile/profile-menu.component';
+import { AdminUserComponent } from './admin/adminUser.component';
+import { AdminCompanyComponent } from './admin/adminCompany.component';
+import { AdminProductComponent } from './admin/adminProducts.component';
 
 
 @NgModule({
@@ -55,14 +58,10 @@ import { ProfileMenuComponent } from './profile/profile-menu.component';
     CompanyComponent,
     CompaniesComponent,
     LoginFormComponent,
-    ProfileComponent,
-    ProfileProductsComponent,
-    ProfileProductsLikesComponent,
-    ProfileProductsCommentsComponent,
-    ProfileMyPublicationsComponent,
-    ProfilePublicationsLikesComponent,
-    ProfilePublicationsCommentsComponent,
-    ProfileMenuComponent,
+=======
+    CompaniesComponent,
+    CompanyComponent 
+>>>>>>> Temporary merge branch 2
   ],
   imports: [
     BrowserModule,
