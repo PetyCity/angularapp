@@ -28,7 +28,7 @@ export class AppComponent {
     
     this.authTokenService.init(environment.token_auth_config);
 
-    // this.authToken.signIn({email: "lgbricenoa@unal.edu.co", password: "987654321"}).subscribe(
+    // this.authTokenService.signIn({email: "lgbricenoa@unal.edu.co", password: "987654321"}).subscribe(
 
     //     res => {
 
