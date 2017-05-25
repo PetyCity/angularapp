@@ -61,7 +61,7 @@
 					    <div class="row">
 
 					        <div class="col-lg-4 col-sm-6 text-center" *ngFor="let product of products | paginate: { itemsPerPage: 9, currentPage: p }">
-					            <img class="img-circle img-responsive img-center img" src="images/producto1.jpg" alt="">
+					            <img class="img-circle img-responsive img-center img" src="{{product.images[0].name_image.url}}" alt="">
 					            <p>
                                     <span class="glyphicon glyphicon-star"></span>
                                     <span class="glyphicon glyphicon-star"></span>
@@ -124,7 +124,7 @@
 						<a class="thumbnail" (click)="goToProduct(product)">
 							<div class="row">
 								<div class="col-5">
-							  		<img src="/images/producto4.jpg" class="imgMasVendidos">
+							  		<img src="{{product.images[0].name_image.url}}" class="imgMasVendidos">
 								</div>
 							<div class="col-7">
 								<div class="row">
