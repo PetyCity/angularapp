@@ -1,7 +1,7 @@
 <div *ngIf="(authTokenService.currentUserData)" class="col l8 s12" >
   <div class="banner-users">
   <div class="tit-banner-company">
-    Productos Usuarios
+    Mis publicaciones
   </div>
 </div>
 <div class="breadcrumbs">
@@ -20,8 +20,8 @@
 
 					<div class="img-publicacion col-md-3">
 						<a class="link-añadir" (click)="goToPublication(publication)">
-						<img *ngIf="(publication.image_publication.url)" class="img-responsive img-center img img-prod-profile" src="{{publication.image_publication?.url}}" alt="{{publication.title}}">
-        		<img *ngIf="!(publication.image_publication.url)" class="img-responsive img-center img img-prod-profile" src="images/interrogacion.png" alt="{{publication.title}}">
+						<img *ngIf="(publication.image_publication?.url != null)" class="img-responsive img-center img img-prod-profile" src="{{publication.image_publication?.url}}" alt="{{publication.title}}">
+        		<img *ngIf="(publication.image_publication?.url == null)" class="img-responsive img-center img img-prod-profile" src="images/interrogacion.png" alt="{{publication.title}}">
 						</a>
 					</div>
 					<div class="detalles-publicacion col-md-9">

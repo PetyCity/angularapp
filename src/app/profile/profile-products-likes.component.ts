@@ -33,5 +33,10 @@ export class ProfileProductsLikesComponent implements OnInit {
   getProducts(id: number){
 		this.apiService.getProductsPerfilVotes(id).subscribe(products => this.products = products);
 	}
+  goToProduct (product: Product): void{
+		let productLink = ['/products', product.id];
+		this.router.navigate(productLink);
+	}
+
 
 }

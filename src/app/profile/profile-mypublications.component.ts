@@ -28,10 +28,14 @@ export class ProfileMyPublicationsComponent implements OnInit {
   ngOnInit() {
     let idperfil = this.authTokenService.currentUserData.id;
     this.publications = ["1"];
-    this.getCommentedPublications(idperfil);
+    this.getMyPublications(idperfil);
   }
-  getCommentedPublications(id: number){
-		this.publicationService.getCommentedPublications(id).subscribe(publications => this.publications = publications);
+  getMyPublications(id: number){
+		this.publicationService.getMyPublications(id).subscribe(publications => this.publications = publications);
+	}
+  goToPublication (publication: Publication): void{
+		let publicationLink = ['/blog', publication.id];
+		this.router.navigate(publicationLink);
 	}
 
 }

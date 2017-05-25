@@ -21,8 +21,7 @@
     </a>
     <!--<div *ngIf="authTokenService.currentUserData" class="col l8 s12" >
       <li class="collection-item">Email:  <b>{{authTokenService.currentUserData.email}}</b></li>
-      <li class="collection-item">Name:  <b>{{authTokenService.currentUserData.name_user}}</b></li>
-      <li class="collection-item">imagen: <b> <img src="{{authTokenService.currentUserData.image.url}}"/></b></li>
+      <li class="collection-item">rol:  <b>{{authTokenService.currentUserData.rol}}</b></li>
     </div>-->
   </div>
   <div class="clear"></div>
@@ -46,7 +45,7 @@
       <li class="nav-item active">
         <a class="nav-link" routerLink='/contact'>Contacto</a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item active" *ngIf='(authTokenService.currentUserData?.rol == "customer")'>
         <a class="nav-link" routerLink='/profile'>Profile</a>
       </li>
       <!--<li class="nav-item active">

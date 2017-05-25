@@ -27,14 +27,17 @@ export class ProfileProductsCommentsComponent implements OnInit {
 
   ngOnInit() {
     let idperfil = this.authTokenService.currentUserData.id;
-   
-    console.log("id perfil: " + idperfil);
+    this.products = ["1"];
     this.getProducts(idperfil);
   }
   getProducts(id: number){
-    console.log("id perfil: ");
 		this.apiService.getProductsPerfilComments(id).subscribe(products => this.products = products);
 		console.log(this.products);
 	}
+  goToProduct (product: Product): void{
+		let productLink = ['/products', product.id];
+		this.router.navigate(productLink);
+	}
+
 
 }

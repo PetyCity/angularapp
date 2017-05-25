@@ -33,5 +33,10 @@ export class ProfileProductsComponent implements OnInit {
   getProducts(id: number){
 		this.apiService.getProductsPerfil(id).subscribe(products => this.products = products);
 	}
+  goToProduct (product: Product): void{
+		let productLink = ['/products', product.id];
+		this.router.navigate(productLink);
+	}
+
 
 }

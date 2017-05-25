@@ -33,5 +33,9 @@ export class ProfilePublicationsCommentsComponent implements OnInit {
   getMyPublications(id: number){
 		this.publicationService.getCommentedPublications(id).subscribe(publications => this.publications = publications);
 	}
+  goToPublication (publication: Publication): void{
+		let publicationLink = ['/blog', publication.id];
+		this.router.navigate(publicationLink);
+	}
 
 }

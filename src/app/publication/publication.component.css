@@ -86,5 +86,110 @@ textarea#body_publication {
     background: white;
     cursor: pointer;
     display: block;
-    
+}
+.img-blog{
+    max-height: 400px;
+}
+.blog-rigth {
+    float: left;
+}
+.blog-left {
+    float: left;
+}
+a{
+    cursor: pointer;
+}
+.like-box {
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+.img-like {
+    max-width: 60px;
+    float: right;
+}
+.text-like {
+    float: right;
+    margin-right: 20px;
+    font-size: 22px;
+    color: #19a919;
+    margin-top: 3px;
+}
+.clear{
+    margin-bottom: 3px;
+}
+.img-dislike {
+    max-width: 60px;
+    padding-top: 14px;
+}
+.text-dislike {
+    float: left;
+    margin-left: 14px;
+    font-size: 22px;
+    color: #e23535;
+    margin-top: -3px;
+}
+.dislike-box {
+    width: 50%;
+    float: left;
+}
+img.user-publication {
+    border: 4px solid #115270;
+    border-radius: 5px;
+    padding: 5px;
+    max-width: 65px;
+}
+.right-comment {
+    float: left;
+}
+.left-comment {
+    float: left;
+}
+span.username-comment {
+    color: #115270;
+    font-size: 16px;
+    font-weight: 600;
+}
+.right-comment .img-like{
+    max-width: 32px;
+    margin-right: 10px;
+}
+.right-comment .img-likes {
+    margin-top: 10px;
+}
+.right-comment .text-like{
+    font-size: 18px;
+    margin-top: 0px; 
+}
+.right-comment .img-dislike{
+    max-width: 32px;
+    padding-top: 12px;
+}
+.right-comment .text-dislike{
+    margin-left: 10px;
+    font-size: 18px;
+    color: #bd1919;
+    margin-top: 6px;
+}
+.blog-comments {
+    margin-top: 15px;
+}
+textarea#comentario {
+    width: 80%;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin-left: 15px;
+    float: left;
+}
+.comentario img.user-publication {
+    float: left;
+    width: 15%;
+}
+.comentario {
+    padding-bottom: 40px;
+    border-bottom: 1px solid #ccc;
+}
+.comentario .form-group {
+    width: 100%;
 }

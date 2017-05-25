@@ -7,7 +7,7 @@
 </div>
 
 <div class="container">
-	<div class="col-9 contenedor-publicaciones">
+	<div class="col-12 contenedor-publicaciones">
 		<div class="blog-title" >
 			<u>Novedades de la comunidad</u>
 		</div>
@@ -16,7 +16,8 @@
 			<div class="contenedor-publicacion" *ngFor="let publication of publications | paginate: { itemsPerPage: 3, currentPage: p }">
 
 				<div class="img-publicacion col-md-3">
-					<img src="images/producto1.jpg" />
+					<img *ngIf="(publication.image_publication?.url != null)" class="img-responsive img-center img img-prod-profile" src="{{publication.image_publication?.url}}" alt="{{publication.title}}">
+        			<img *ngIf="(publication.image_publication?.url == null)" class="img-responsive img-center img img-prod-profile" src="images/interrogacion.png" alt="{{publication.title}}">	
 				</div>
 				<div class="detalles-publicacion col-md-9">
 					<div class="descripcion">
@@ -37,76 +38,7 @@
 		</div>
 	</div>
 
-	<div class="col-3 barra-izq" >
-		<span class="titulos-productos">Categoria de Productos</span>
-		<div class="opciones-productos">
-			<a href="">Accesorios para Mascotas</a> <br>
-			<a href="">Comida para mascotas</a> <br>
-			<a href="">Productos de salud</a> <br>
-			<a href="">Productos de Belleza</a> <br>
-			<a href="">Habitat para Mascotas</a> <br>
-		</div>
-
-		<span class="titulos-productos">Productos Destacados</span>
-
-		<div class="opciones-productos" >
-
-			<div>
-				IMAGEN
-			</div>
-			<div class="row">
-				<div class="col-8">
-					Producto 1
-				</div>
-				<div class="col-4">
-					1234
-				</div>
-				
-			</div>
-
-			<div>
-				IMAGEN
-			</div>
-			<div class="row">
-				<div class="col-8">
-					Producto 2
-				</div>
-				<div class="col-4">
-					3346
-				</div>
-				
-			</div>
-
-			<div>
-				IMAGEN
-	</div>
-	<div class="productos col-9" >
-		<div class="row" >
-			<div class="col-4 " *ngFor="let product of products | paginate: { itemsPerPage: 9, currentPage: p }">
-				<a (click)="goToProduct(product)">
-					{{product.name_product}}
-				</a>
-
-			</div>
-			<div class="row">
-				<div class="col-8">
-					Producto 3
-				</div>
-				<div class="col-4">
-					353453
-				</div>
-				
-			</div>
-			
-		</div>
-
-
-	</div>
-
-	</div>
-
-
-</div>
+	
 
 <div class="pagination"><pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls></div>
 
