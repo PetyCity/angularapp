@@ -21,20 +21,20 @@ export class AppComponent {
 
   title = 'app works!';
   constructor(
-    private authService:AuthService, 
+    private authService:AuthService,
     protected authTokenService:Angular2TokenService,
     private router:Router,
     ){
-    
+
     this.authTokenService.init(environment.token_auth_config);
 
-    // this.authToken.signIn({email: "lgbricenoa@unal.edu.co", password: "987654321"}).subscribe(
+    // this.authTokenService.signIn({email: "lgbricenoa@unal.edu.co", password: "987654321"}).subscribe(
 
     //     res => {
 
     //       console.log('auth response:', res);
     //       console.log('auth response headers: ', res.headers.toJSON()); //log the response header to show the auth token
-    //       console.log('auth response body:', res.json()); //log the response body to show the user 
+    //       console.log('auth response body:', res.json()); //log the response body to show the user
     //     },
 
     //     err => {

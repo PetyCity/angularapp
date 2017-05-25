@@ -46,8 +46,9 @@ import { AdminProductComponent } from './admin/adminProducts.component';
     CategoryComponent,
     CategorybyidComponent,
     PublicationComponent,
+    CompanyComponent,
     CompaniesComponent,
-    CompanyComponent ,
+    LoginFormComponent,
     AdminUserComponent,
     AdminCompanyComponent,
     AdminProductComponent

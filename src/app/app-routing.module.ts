@@ -1,4 +1,5 @@
-import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
+
 import { RouterModule, Routes } from '@angular/router';
 
 import { PostListComponent } from './post/post-list.component';
