@@ -53,7 +53,7 @@
 
     <div class="caja-producto" *ngFor="let product of productsMostSales">
       <div class="img-producto imgHhome">
-        <img src="{{product.images[0]?.name_image.url}}" />
+        <img class="imgHome" src="{{product.images[0]?.name_image.url}}" />
       </div>
       <div class="txt-producto">
         <h2> {{product.name_product}} </h2>

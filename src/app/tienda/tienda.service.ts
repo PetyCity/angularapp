@@ -8,7 +8,7 @@ import { Product } from './tienda';
 export class TiendaService {
 	private productUrl = 'http://localhost:3000/api/v1/products';
 	private lastProductsUrl = 'http://localhost:3000/api/v1/home/lastproducts';
-	private mostSalesUrl = 'http://localhost:3000/api/v1/home/mostsales';
+	private mostSalesUrl = 'http://localhost:3000/api/v1/home/lastproducts';
 
 	private newproductUrl = 'http://localhost:3000/api/v1/company/users/2/products';
 	

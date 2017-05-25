@@ -10,7 +10,7 @@
   <div class="info-prod col-md-10">
     <div class="col-md-12">
       <div class="img-prod col-md-6">
-        <img src="images/producto1.jpg" alt="producto1" />
+        <img src="{{product.product.images[0].name_image.url}}" alt="producto1" />
       </div> 
       <div class="datos-prod col-md-6">
         <div class="txt-producto">
@@ -64,7 +64,7 @@
       <div class="cont-productos prod-recientes">
         <div class="caja-producto" *ngFor="let product of productsRelated">
           <div class="img-producto">
-            <img src="images/producto1.jpg" />
+            <img class="img" src="{{product.images[0]?.name_image.url}}" />
           </div>
           <div class="txt-producto">
             <h2> {{product.name_product}} </h2>
